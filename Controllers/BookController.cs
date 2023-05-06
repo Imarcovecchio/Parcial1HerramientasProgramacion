@@ -24,7 +24,7 @@ namespace Parcial.Controllers
             var query = from book in _context.Book select book; 
             if (!string.IsNullOrEmpty(nameFilter))
             {
-                query = query.Where(x=> x.Nombre.Contains(nameFilter.ToLower()));
+                query = query.Where(x=> x.Nombre.ToLower().Contains(nameFilter.ToLower()));
             }
 
             var queryReady = await query.Include(b =>b.Autor).ToListAsync();
