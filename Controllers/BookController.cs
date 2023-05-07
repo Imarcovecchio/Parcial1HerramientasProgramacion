@@ -24,7 +24,7 @@ namespace Parcial.Controllers
             var query = from book in _context.Book select book; 
             if (!string.IsNullOrEmpty(nameFilter))
             {
-                query = query.Where(x=> x.Nombre.ToLower().Contains(nameFilter.ToLower()));
+                query = query.Where(x=> x.Nombre.ToLower().Contains(nameFilter.ToLower()) || x.Editorial.ToLower().Contains(nameFilter.ToLower()) || x.Año.ToString() == nameFilter);
             }
 
             var queryReady = await query.Include(b =>b.Autor).ToListAsync();
@@ -79,7 +79,7 @@ namespace Parcial.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Id", book.AutorId);
+            ViewData["AutorId"] = new SelectList(_context.Autor, "Nombre", "Id", book.AutorId);
             return View(book);
         }
 
@@ -107,6 +107,7 @@ namespace Parcial.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado")] Book book)
         {
+            ModelState.Remove("Autor");
             if (id != book.Id)
             {
                 return NotFound();

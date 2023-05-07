@@ -23,7 +23,7 @@ namespace Parcial.Controllers
         {
             var query = from autor in _context.Autor select autor;
             if(!string.IsNullOrEmpty(nameFilter)){
-                query = query.Where(x => x.Nombre.ToLower().Contains(nameFilter.ToLower()));
+                query = query.Where(x => x.Nombre.ToLower().Contains(nameFilter.ToLower()) || x.Apellido.ToLower().Contains(nameFilter.ToLower()) || x.Edad.ToString() == nameFilter);
             }
 
             var model = new AutorViewModel();
@@ -100,6 +100,7 @@ namespace Parcial.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellido,Edad,Genero")] Autor autor)
         {
+            ModelState.Remove("Books");
             if (id != autor.Id)
             {
                 return NotFound();

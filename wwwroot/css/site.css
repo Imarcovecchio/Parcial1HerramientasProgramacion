@@ -19,4 +19,10 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color:#63b1ff ;
+  background-size: cover;
 }
+head{
+  background-color: #2072ca;
+}
+
