@@ -50,10 +50,12 @@ namespace Parcial.Controllers
             var book = await _context.Book
                 .Include(b => b.Autor)
                 .FirstOrDefaultAsync(m => m.Id == id);
+            
             if (book == null)
             {
                 return NotFound();
             }
+
 
             return View(book);
         }
