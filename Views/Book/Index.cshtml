@@ -3,18 +3,18 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Index</h1>
+<body class="pruebas">
+<h1 class="display-4 rounded">Libros ISTEA</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+  <a asp-action="Create" class="btn btn-outline-dark">Crear nuevo libro</a>
 </p>
-<div class="row">
+<div class="row indexbook">
 <form method="get" asp-action="Index" asp-controller="Book">
     <div class="col-6 form-group">
         <input class="form-control" asp-for="NameFilter"/>
     </div>
-    <button class="btn" type="submit">Buscar</button>
+    <button class="btn btn-outline-dark" type="submit">Buscar</button>
 </form>
 </div>
 <table class="table">
@@ -62,12 +62,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Autor.Id)
             </td>
+
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm">Detalles</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Eliminar</a>
             </td>
+            
         </tr>
 }
     </tbody>
 </table>
+</body>

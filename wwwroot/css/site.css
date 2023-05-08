@@ -24,7 +24,15 @@ html {
   background-repeat: no-repeat;
   opacity: 0.8;
 }
-*/
+
+.pruebas{
+  background-image: url('../Images/librr.jpg') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
 .center_text{
   font-family: Calibri, sans-serif;
   font-size: calc(1.475rem + 2.7vw);

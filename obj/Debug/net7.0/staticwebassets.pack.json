@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\Images\\biblioteca.jpg"
     },
     {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\librr.jpg",
+      "PackagePath": "staticwebassets\\Images\\librr.jpg"
+    },
+    {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\config.css",
       "PackagePath": "staticwebassets\\css\\config.css"
     },
