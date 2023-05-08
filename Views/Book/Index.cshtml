@@ -3,13 +3,13 @@
 @{
     ViewData["Title"] = "Index";
 }
-<body class="pruebas">
+<body class="indexbook">
 <h1 class="display-4 rounded">Libros ISTEA</h1>
 
 <p>
   <a asp-action="Create" class="btn btn-outline-dark">Crear nuevo libro</a>
 </p>
-<div class="row indexbook">
+<div class="row">
 <form method="get" asp-action="Index" asp-controller="Book">
     <div class="col-6 form-group">
         <input class="form-control" asp-for="NameFilter"/>
