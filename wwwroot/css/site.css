@@ -17,12 +17,24 @@ html {
   min-height: 100%;
 }
 
-body {
-  margin-bottom: 60px;
-  background-color:#63b1ff ;
+.indexhome {
+  background-image: url('/Images/biblioteca.jpg');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
 }
-head{
-  background-color: #2072ca;
+*/
+.center_text{
+  font-family: Calibri, sans-serif;
+  font-size: calc(1.475rem + 2.7vw);
+  font-weight: 300;
+  line-height: 1.2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
+
 

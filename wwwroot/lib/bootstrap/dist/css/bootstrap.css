@@ -7605,7 +7605,13 @@ textarea.form-control-lg {
 }
 
 .text-center {
-  text-align: center !important;
+text-align: center !important;
+}
+.biblioteca {
+  font-family: sans-serif; 
+  font-size: 300px; 
+  color: white; 
+  text-shadow: 2px 2px black; 
 }
 
 .text-decoration-none {

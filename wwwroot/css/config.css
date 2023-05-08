@@ -1,0 +1,36 @@
+.config{
+    color: wheat;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+}
+.prueba{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100vh;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20rem;
+        font-weight: bold;
+        color: #ffffff;
+        text-shadow: 2px 2px 4px #000000;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 60%;
+    left: 60%;
+    transform: translate(-70%, -70%);
+    
+  }
+
+
+

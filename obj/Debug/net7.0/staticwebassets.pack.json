@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Parcial.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\biblioteca.jpg",
+      "PackagePath": "staticwebassets\\Images\\biblioteca.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\config.css",
+      "PackagePath": "staticwebassets\\css\\config.css"
+    },
+    {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

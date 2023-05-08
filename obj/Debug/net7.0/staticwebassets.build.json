@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I+O8SbjXY4NYZnZTe+oImdUSWyLySSOB3J+S07fW6zc=",
+  "Hash": "BF2xe7eBQVcJ47UOA2mbftwGAYRG+6tbxTnbDfQfAlc=",
   "Source": "Parcial",
   "BasePath": "_content/Parcial",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Parcial.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\config.css",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "css/config.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\config.css"
+    },
+    {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\site.css",
       "SourceId": "Parcial",
       "SourceType": "Discovered",
@@ -83,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\biblioteca.jpg",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/biblioteca.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\biblioteca.jpg"
     },
     {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\js\\site.js",
