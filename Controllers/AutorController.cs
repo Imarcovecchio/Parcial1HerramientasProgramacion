@@ -65,16 +65,22 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Apellido,Edad,Genero")] Autor autor)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Apellido,Edad,Genero")] AutorCreateViewModel autorView)
         {
-            ModelState.Remove("Books");
             if (ModelState.IsValid)
             {
+                var autor = new Autor{
+                    Id=autorView.Id,
+                    Nombre=autorView.Nombre,
+                    Apellido=autorView.Apellido,
+                    Edad=autorView.Edad,
+                    Genero=autorView.Genero
+                };
                 _context.Add(autor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(autor);
+            return View(autorView);
         }
 
         // GET: Autor/Edit/5

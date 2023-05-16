@@ -72,17 +72,26 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado")] Book book)
+        public async Task<IActionResult> Create([Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado")] BookCreateViewModel bookView)
         {
-            ModelState.Remove("Autor");
             if (ModelState.IsValid)
             {
+                var book = new Book{
+                    Id = bookView.Id,
+                    AutorId=bookView.AutorId,
+                    Nombre=bookView.Nombre,
+                    Editorial=bookView.Editorial,
+                    Año=bookView.Año,
+                    Genero=bookView.Genero,
+                    EstaReservado=bookView.EstaReservado
+
+                };
                 _context.Add(book);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Nombre", "Id", book.AutorId);
-            return View(book);
+            ViewData["AutorId"] = new SelectList(_context.Autor, "Nombre", "Id", bookView.AutorId);
+            return View(bookView);
         }
 
         // GET: Book/Edit/5
