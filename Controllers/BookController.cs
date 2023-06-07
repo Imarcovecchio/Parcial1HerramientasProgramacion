@@ -56,14 +56,14 @@ namespace Parcial.Controllers
                 return NotFound();
             }
 
-
             return View(book);
         }
 
         // GET: Book/Create
         public IActionResult Create()
         {
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Id");
+            // Obtener la lista de autores desde alguna fuente de datos
+            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Nombre");
             return View();
         }
 
@@ -107,7 +107,7 @@ namespace Parcial.Controllers
             {
                 return NotFound();
             }
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Id", book.AutorId);
+            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Nombre", book.AutorId);
             return View(book);
         }
 
@@ -154,7 +154,7 @@ namespace Parcial.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Id", bookView.AutorId);
+            
             return View(bookView);
         }
 
