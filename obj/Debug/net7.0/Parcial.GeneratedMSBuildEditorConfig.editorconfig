@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\nacho\OneDrive\Documentos\ISTEA\Herramientas\Parcial
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Autor/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -66,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Shared/_ValidationScriptsPartial.cshtml]

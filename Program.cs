@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Parcial.Data;
@@ -6,6 +7,10 @@ builder.Services.AddDbContext<AutorContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("AutorContext") ?? throw new InvalidOperationException("Connection string 'AutorContext' not found.")));
 
 // Add services to the container.
+
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<AutorContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -28,5 +33,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+    
+app.MapRazorPages();
 
 app.Run();

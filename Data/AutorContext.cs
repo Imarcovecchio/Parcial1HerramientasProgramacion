@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Parcial.Data
 {
-    public class AutorContext : DbContext
+    public class AutorContext : IdentityDbContext
     {
         public AutorContext (DbContextOptions<AutorContext> options)
             : base(options)
@@ -22,6 +23,8 @@ namespace Parcial.Data
             .HasMany(p=> p.Books)
             .WithOne(p=> p.Autor)
             .HasForeignKey(p=> p.AutorId);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
