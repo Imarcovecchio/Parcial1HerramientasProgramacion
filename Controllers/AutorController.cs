@@ -104,16 +104,23 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellido,Edad,Genero")] Autor autor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Apellido,Edad,Genero")] AutorEditViewModel autorView)
         {
-            ModelState.Remove("Books");
-            if (id != autor.Id)
+            if (id != autorView.Id)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
+                var autor = new Autor{
+                    Id=autorView.Id,
+                    Nombre=autorView.Nombre,
+                    Apellido=autorView.Apellido,
+                    Edad=autorView.Edad,
+                    Genero=autorView.Genero
+                };
+
                 try
                 {
                     _context.Update(autor);
@@ -132,7 +139,7 @@ namespace Parcial.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(autor);
+            return View(autorView);
         }
 
         // GET: Autor/Delete/5
