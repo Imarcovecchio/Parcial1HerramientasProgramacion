@@ -62,6 +62,7 @@ public class UsersController : Controller
         if (user != null)
         {
             await _userManager.AddToRoleAsync(user, model.Role);
+            
         }
 
         return RedirectToAction("Index");

@@ -17,6 +17,18 @@ html {
   min-height: 100%;
 }
 
+.grid-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.grid-container img {
+  width: 24px;
+  height: 24px;
+}
+
 .indexhome {
   background-image: url('/Images/biblioteca.jpg');
   background-size: cover;
@@ -53,3 +65,12 @@ html {
 }
 
 
+.ml-auto {
+  margin-left: auto;
+}
+
+.row-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

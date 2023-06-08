@@ -2,6 +2,8 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Parcial.Models;
 
 namespace Parcial.Controllers;
@@ -43,5 +45,75 @@ namespace Parcial.Controllers;
         _roleManager.CreateAsync(role);
 
         return RedirectToAction("Index");
+    }
+
+    [Authorize]
+    public async Task<IActionResult> Edit(string id)
+    {
+        var rol = await _roleManager.FindByIdAsync(id);
+        
+        var roleViewModel = new RoleEditViewModel();
+        roleViewModel.RoleName = rol.Name ?? string.Empty;
+        roleViewModel.NewRoleName=rol.Name?? string.Empty;
+
+        var roles = await _roleManager.Roles.ToListAsync();
+        roleViewModel.RoleNames = roles.Select(r => new SelectListItem { Value = r.Name, Text = r.Name });
+
+        return View(roleViewModel);
+    }
+
+     [HttpPost]
+    public async Task<IActionResult> Edit(RoleEditViewModel model)
+    {
+        var rol = await _roleManager.FindByNameAsync(model.RoleName);
+       
+        if (rol != null)
+        {
+            rol.Name=model.NewRoleName;
+            await _roleManager.UpdateAsync(rol);
+        }
+
+        return RedirectToAction("Index");
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> Delete(string id)
+    {
+        var rol = await _roleManager.FindByIdAsync(id);
+
+        var roleViewModel = new RoleEditViewModel();
+        roleViewModel.RoleName = rol != null ? rol.Name : string.Empty;
+
+        var roles = await _roleManager.Roles.ToListAsync();
+        roleViewModel.RoleNames = roles.Select(r => new SelectListItem { Value = r.Name, Text = r.Name });
+        return View(roleViewModel);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Delete(RoleCreateViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var role = await _roleManager.FindByNameAsync(model.RoleName);
+            if (role == null)
+            {
+                ModelState.AddModelError(string.Empty, "El rol no existe.");
+                return View(model);
+            }
+
+            var result = await _roleManager.DeleteAsync(role);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+        }
+
+        return View(model);
     }
     }

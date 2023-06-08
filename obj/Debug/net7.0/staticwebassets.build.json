@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "o7mYPk6nsB29b9nQOnKNDSORzvSli801s4nHEKz9uBY=",
+  "Hash": "yDTGX/Qkij3INHFlvYnQSyiUibIsuU5P4lG3DX+NTNc=",
   "Source": "Parcial",
   "BasePath": "_content/Parcial",
   "Mode": "Default",
@@ -1137,6 +1137,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\autor.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_delete_outline_black_24dp.png",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/baseline_delete_outline_black_24dp.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\baseline_delete_outline_black_24dp.png"
+    },
+    {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_edit_black_24dp.png",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/baseline_edit_black_24dp.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\baseline_edit_black_24dp.png"
     },
     {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\biblioteca.jpg",

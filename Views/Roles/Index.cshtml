@@ -3,9 +3,38 @@
 
 <h3>Roles</h3>
 
-<ul>
 @foreach (var item in Model)
 {
-    <li>@item.Name</li>
+    <tr>
+        <td>
+            <div class="d-flex align-items-center row-container">
+                <span class="mr-3" style="font-size: 18px; font-family: 'Arial', sans-serif; color: #333;">@Html.DisplayFor(modelItem => item.Name)</span>
+                <div class="ml-auto">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm btn-icon" style="margin-left: 40px;">
+                        <img src="../Images/baseline_edit_black_24dp.png" alt="Editar" />
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm btn-icon" style="margin-left: 430px;">
+                        <img src="../Images/baseline_delete_outline_black_24dp.png" alt="Eliminar" />
+                    </a>
+                </div>
+            </div>
+        </td>
+    </tr>
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+    <a asp-action="Create" class="btn  btn-primary">Crear nuevo Rol</a>
 </ul>
