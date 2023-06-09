@@ -13,6 +13,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>()
     .AddEntityFrameworkStores<AutorContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IAutorServices, AutorServices>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
