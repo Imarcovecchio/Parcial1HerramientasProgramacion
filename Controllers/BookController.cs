@@ -96,6 +96,7 @@ namespace Parcial.Controllers
         }
 
         // GET: Book/Edit/5
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Book == null)
@@ -117,7 +118,7 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles="Administrador")]
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado")] BookEditViewModel bookView)
         {
             if (id != bookView.Id)
@@ -159,7 +160,7 @@ namespace Parcial.Controllers
             
             return View(bookView);
         }
-        [Authorize(Roles="Administrador")]
+        [Authorize(Roles="Administrador,Supervisor")]
         // GET: Book/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -182,7 +183,7 @@ namespace Parcial.Controllers
         // POST: Book/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles="Administrador")]
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Book == null)
