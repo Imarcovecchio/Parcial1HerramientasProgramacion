@@ -44,7 +44,7 @@ public class UsersController : Controller
         return View(userViewModel);
     }
     
-    [Authorize]
+    [Authorize(Roles="Administrador")]
     public IActionResult Privacy()
     {
         return View();
@@ -56,6 +56,7 @@ public class UsersController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
      [HttpPost]
+     [Authorize(Roles="Supervisor")]
     public async Task<IActionResult> Edit(UserEditViewModel model)
     {
         var user = await _userManager.FindByNameAsync(model.UserName);
