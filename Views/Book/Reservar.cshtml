@@ -8,11 +8,14 @@
     {
         <form method="post" asp-action="Reservar" asp-controller="Book">
             <input type="hidden" asp-for="Id" />
-            <button type="submit">Reservar Libro</button>
+            <button type="submit" class="btn btn-primary btn-lg">Reservar Libro</button>
         </form>
     }
     else
     {
         <p>Este libro ya está reservado.</p>
+        <div>
+        <a asp-action="Index">Regresar</a>
+        </div>
     }
 </div>

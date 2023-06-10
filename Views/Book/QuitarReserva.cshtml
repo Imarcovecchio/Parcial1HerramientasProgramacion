@@ -1,0 +1,21 @@
+@model Book
+
+<!-- Resto del contenido de la vista -->
+
+<h3>Quitar Reservar</h3>
+<div>
+    @if (Model.EstaReservado)
+    {
+        <form method="post" asp-action="QuitarReserva" asp-controller="Book">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-primary btn-lg">Quitar Reservar</button>
+        </form>
+    }
+    else
+    {
+        <p>Este libro no está reservado.</p>
+        <div>
+        <a asp-action="Index">Regresar</a>
+        </div>
+    }
+</div>

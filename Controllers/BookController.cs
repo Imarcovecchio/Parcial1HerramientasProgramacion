@@ -62,6 +62,37 @@ namespace Parcial.Controllers
 
         return RedirectToAction("Index");  // Redireccionar a la vista principal después de reservar el libro
         }
+        public IActionResult QuitarReserva(int id){
+            var book = _bookServices.GetById(id);
+
+            if (book == null)
+            {
+            return NotFound();
+            }
+
+            return View(book);
+        }
+
+        [HttpPost, ActionName("QuitarReserva")]
+        public async Task<IActionResult> QuitarReservaConfirmed(int id)
+        {
+        var book = _bookServices.GetById(id);
+
+        if (book == null)
+        {
+            return NotFound(); 
+        }
+
+        if (!book.EstaReservado)
+        {
+            return RedirectToAction("Index");  
+        }
+
+        book.EstaReservado = false;
+        _bookServices.Reservar(book);  // Actualizar el libro en la base de datos
+
+        return RedirectToAction("Index");  // Redireccionar a la vista principal después de reservar el libro
+        }
 
         // GET: Book/Details/5
         public async Task<IActionResult> Details(int? id)

@@ -18715,6 +18715,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Book\\QuitarReserva.cshtml",
+      "TargetPath": "Views\\Book\\QuitarReserva.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Autor\\Edit.cshtml",
       "TargetPath": "Views\\Autor\\Edit.cshtml",
       "FileKind": "mvc"
