@@ -23,12 +23,44 @@ namespace Parcial.Controllers
 
         // GET: Book
         public async Task<IActionResult> Index(string nameFilter)
-    {
+        {
             var model = new BookViewModel();
             model.Books = _bookServices.QuerySearch(nameFilter);
             
               return View(model);
             
+        }
+
+        public IActionResult Reservar(int id){
+            var book = _bookServices.GetById(id);
+
+            if (book == null)
+            {
+            return NotFound();
+            }
+
+            return View(book);
+        }
+
+        [HttpPost, ActionName("Reservar")]
+        public async Task<IActionResult> ReservarConfirmed(int id)
+        {
+        var book = _bookServices.GetById(id);
+
+        if (book == null)
+        {
+            return NotFound(); 
+        }
+
+        if (book.EstaReservado)
+        {
+            return RedirectToAction("Index");  
+        }
+
+        book.EstaReservado = true;
+        _bookServices.Reservar(book);  // Actualizar el libro en la base de datos
+
+        return RedirectToAction("Index");  // Redireccionar a la vista principal después de reservar el libro
         }
 
         // GET: Book/Details/5

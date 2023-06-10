@@ -29,6 +29,11 @@ public class BookServices : IbookServices
         _context.Remove(book);
        _context.SaveChanges();
     }
+    public void Reservar(Book book){
+        _context.Entry(book).State = EntityState.Modified;
+        _context.SaveChanges();
+        
+    }
 
     public List<Book> GetAll()
     {

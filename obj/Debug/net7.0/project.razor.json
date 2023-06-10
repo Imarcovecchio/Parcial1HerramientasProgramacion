@@ -18705,6 +18705,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Book\\Reservar.cshtml",
+      "TargetPath": "Views\\Book\\Reservar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Users\\Index.cshtml",
       "TargetPath": "Views\\Users\\Index.cshtml",
       "FileKind": "mvc"
