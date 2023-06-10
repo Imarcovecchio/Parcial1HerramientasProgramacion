@@ -14,6 +14,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>()
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IAutorServices, AutorServices>();
+builder.Services.AddScoped<IbookServices,BookServices>();
 
 var app = builder.Build();
 

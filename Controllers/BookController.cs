@@ -12,45 +12,35 @@ namespace Parcial.Controllers
 {
     public class BookController : Controller
     {
-        private readonly AutorContext _context;
+        private readonly IbookServices _bookServices;
 
-        public BookController(AutorContext context)
+        public BookController(IbookServices bookServices)
         {
-            _context = context;
+            _bookServices = bookServices;
         }
+
+        
 
         // GET: Book
         public async Task<IActionResult> Index(string nameFilter)
     {
-            var query = from book in _context.Book select book; 
-            if (!string.IsNullOrEmpty(nameFilter))
-            {
-                query = query.Where(x=> x.Nombre.ToLower().Contains(nameFilter.ToLower()) || x.Editorial.ToLower().Contains(nameFilter.ToLower()) || x.Año.ToString() == nameFilter);
-            }
-
-            var queryReady = await query.Include(b =>b.Autor).ToListAsync();
-
-//
             var model = new BookViewModel();
-            model.Books = queryReady;
+            model.Books = _bookServices.QuerySearch(nameFilter);
             
-              return _context.Book != null ? 
-                          View(model) :
-                          Problem("Entity set BookContext.Book is null");
+              return View(model);
             
         }
 
         // GET: Book/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Book == null)
+            ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
+            if (id == null )
             {
                 return NotFound();
             }
 
-            var book = await _context.Book
-                .Include(b => b.Autor)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var book = _bookServices.GetById(id.Value);
             
             if (book == null)
             {
@@ -63,8 +53,8 @@ namespace Parcial.Controllers
         // GET: Book/Create
         public IActionResult Create()
         {
+            ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
             // Obtener la lista de autores desde alguna fuente de datos
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Nombre");
             return View();
         }
 
@@ -87,11 +77,10 @@ namespace Parcial.Controllers
                     EstaReservado=bookView.EstaReservado
 
                 };
-                _context.Add(book);
-                await _context.SaveChangesAsync();
+                _bookServices.Create(book);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Nombre", "Id", bookView.AutorId);
+            
             return View(bookView);
         }
 
@@ -99,17 +88,18 @@ namespace Parcial.Controllers
         [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Book == null)
+            ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
+            if (id == null )
             {
                 return NotFound();
             }
 
-            var book = await _context.Book.FindAsync(id);
+            var book = _bookServices.GetById(id.Value);
             if (book == null)
             {
                 return NotFound();
             }
-            ViewData["AutorId"] = new SelectList(_context.Autor, "Id", "Nombre", book.AutorId);
+            
             return View(book);
         }
 
@@ -138,23 +128,7 @@ namespace Parcial.Controllers
                     EstaReservado=bookView.EstaReservado
 
                 };
-
-                try
-                {
-                    _context.Update(book);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BookExists(book.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _bookServices.Update(book);
                 return RedirectToAction(nameof(Index));
             }
             
@@ -164,14 +138,13 @@ namespace Parcial.Controllers
         // GET: Book/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Book == null)
+            ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
+            if (id == null )
             {
                 return NotFound();
             }
 
-            var book = await _context.Book
-                .Include(b => b.Autor)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var book = _bookServices.GetById(id.Value);
             if (book == null)
             {
                 return NotFound();
@@ -186,23 +159,18 @@ namespace Parcial.Controllers
         [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Book == null)
-            {
-                return Problem("Entity set 'AutorContext.Book'  is null.");
-            }
-            var book = await _context.Book.FindAsync(id);
+            
+            var book = _bookServices.GetById(id);
             if (book != null)
             {
-                _context.Book.Remove(book);
+                _bookServices.Delete(book);
             }
-            
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool BookExists(int id)
         {
-          return (_context.Book?.Any(e => e.Id == id)).GetValueOrDefault();
+          return _bookServices.GetById(id) != null;
         }
     }
 }
