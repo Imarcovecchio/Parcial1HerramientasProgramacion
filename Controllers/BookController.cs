@@ -98,6 +98,7 @@ namespace Parcial.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
+            ViewData["Categorias"] = _bookServices.GetCategoriaSelectList();
             if (id == null )
             {
                 return NotFound();
@@ -109,6 +110,7 @@ namespace Parcial.Controllers
             {
                 return NotFound();
             }
+            
 
             return View(book);
         }
@@ -159,6 +161,7 @@ namespace Parcial.Controllers
         public async Task<IActionResult> Edit(int? id)
         {
             ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
+            ViewData["Categorias"] = _bookServices.GetCategoriaSelectList();
             if (id == null )
             {
                 return NotFound();
@@ -169,8 +172,19 @@ namespace Parcial.Controllers
             {
                 return NotFound();
             }
-            
-            return View(book);
+             var bookEditViewModel = new BookEditViewModel
+            {
+                    Id = book.Id,
+                    AutorId = book.AutorId,
+                    Nombre = book.Nombre,
+                    Editorial = book.Editorial,
+                    Año = book.Año,
+                    Genero = book.Genero,
+                    EstaReservado = book.EstaReservado,
+                    CategoriaIds = book.Categorias.Select(c => c.Id).ToList()
+            };
+        
+            return View(bookEditViewModel);
         }
 
         // POST: Book/Edit/5
@@ -179,13 +193,10 @@ namespace Parcial.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         //[Authorize(Roles="Administrador,Supervisor")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado,Categorias")] BookEditViewModel bookView)
+        public async Task<IActionResult> Edit([Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado,CategoriaIds")] BookEditViewModel bookView)
         {
-            if (id != bookView.Id)
-            {
-                return NotFound();
-            }
-
+            var categorias = _context.Categoria.Where(x=> bookView.CategoriaIds.Contains(x.Id)).ToList();
+          
             if (ModelState.IsValid)
             {
                 var book = new Book{
@@ -196,6 +207,7 @@ namespace Parcial.Controllers
                     Año=bookView.Año,
                     Genero=bookView.Genero,
                     EstaReservado=bookView.EstaReservado,
+                    Categorias=categorias
                 };
                 _bookServices.Update(book);
                 return RedirectToAction(nameof(Index));

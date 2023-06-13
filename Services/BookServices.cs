@@ -66,8 +66,9 @@ public class BookServices : IbookServices
 
     public Book? GetById(int id)
     {
-        var book =  _context.Book.FirstOrDefault(m=> m.Id == id);
-        return book;
+        return _context.Book
+        .Include(b => b.Categorias) 
+        .FirstOrDefault(b => b.Id == id);
     }
 
     public List<Book> QuerySearch(string str)
@@ -90,7 +91,35 @@ public class BookServices : IbookServices
 
     public void Update(Book book)
     {
-        _context.Update(book);
-        _context.SaveChanges();
+        var existingBook = _context.Book
+        .Include(b => b.Categorias) 
+        .FirstOrDefault(b => b.Id == book.Id);
+
+        if (existingBook != null)
+        {
+            existingBook.AutorId = book.AutorId;
+            existingBook.Nombre = book.Nombre;
+            existingBook.Editorial = book.Editorial;
+            existingBook.Año = book.Año;
+            existingBook.Genero = book.Genero;
+            existingBook.EstaReservado = book.EstaReservado;
+
+            var categoriesToRemove = existingBook.Categorias
+                .Where(c => !book.Categorias.Any(bc => bc.Id == c.Id))
+                .ToList();
+            foreach (var category in categoriesToRemove)
+            {
+                existingBook.Categorias.Remove(category);
+            }
+
+            var categoriesToAdd = book.Categorias
+                .Where(bc => !existingBook.Categorias.Any(c => c.Id == bc.Id))
+                .ToList();
+            foreach (var category in categoriesToAdd)
+            {
+                existingBook.Categorias.Add(category);
+            }
+            _context.SaveChanges();
+        }
     }
 }

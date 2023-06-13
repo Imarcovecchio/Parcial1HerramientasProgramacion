@@ -1,6 +1,6 @@
     public class BookEditViewModel
     {
-        public int Id { get; set; }
+    public int Id { get; set; }
     public int AutorId {get;set;}
     public string Nombre{get;set;}
     public string Editorial { get; set; }
@@ -9,5 +9,5 @@
 
     public bool EstaReservado {get; set;} = false;
 
-    public ICollection<Categoria> Categorias { get; set; }
+    public List<int> CategoriaIds{get;set;}
     }
