@@ -1,0 +1,26 @@
+@model CategoriaCreateViewModel
+
+@{
+    ViewData["Title"] = "Crear Categoría";
+    List<Book> bookList = (List<Book>)ViewData["Libros"];
+}
+
+<h1>Crear Categoría</h1>
+
+<form asp-action="CreateCategoria" method="post">
+    <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input class="form-control" type="text" id="nombre" name="Nombre" required>
+    </div>
+    <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <textarea class="form-control" id="descripcion" name="Descripcion" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>
+@foreach (var item in bookList)
+{
+    <div>@item.Nombre</div>
+}
+
+

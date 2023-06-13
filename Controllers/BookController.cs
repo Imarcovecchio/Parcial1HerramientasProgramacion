@@ -13,13 +13,13 @@ namespace Parcial.Controllers
     public class BookController : Controller
     {
         private readonly IbookServices _bookServices;
+        private readonly AutorContext _context;
 
-        public BookController(IbookServices bookServices)
+        public BookController(IbookServices bookServices, AutorContext context)
         {
             _bookServices = bookServices;
+            _context = context;
         }
-
-        
 
         // GET: Book
         public async Task<IActionResult> Index(string nameFilter)
@@ -117,17 +117,22 @@ namespace Parcial.Controllers
         public IActionResult Create()
         {
             ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
-            // Obtener la lista de autores desde alguna fuente de datos
+            ViewData["Categorias"] = _bookServices.GetCategoriaSelectList();
+           
             return View();
+        
         }
+
 
         // POST: Book/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado")] BookCreateViewModel bookView)
+        public async Task<IActionResult> Create([Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado,CategoriaIds")] BookCreateViewModel bookView)
         {
+            
+           var categorias = _context.Categoria.Where(x=> bookView.CategoriaIds.Contains(x.Id)).ToList();
             if (ModelState.IsValid)
             {
                 var book = new Book{
@@ -137,9 +142,11 @@ namespace Parcial.Controllers
                     Editorial=bookView.Editorial,
                     Año=bookView.Año,
                     Genero=bookView.Genero,
-                    EstaReservado=bookView.EstaReservado
+                    EstaReservado=bookView.EstaReservado,
+                    Categorias = categorias
 
-                };
+                };       
+
                 _bookServices.Create(book);
                 return RedirectToAction(nameof(Index));
             }
@@ -148,7 +155,7 @@ namespace Parcial.Controllers
         }
 
         // GET: Book/Edit/5
-        [Authorize(Roles="Administrador,Supervisor")]
+        //[Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Edit(int? id)
         {
             ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
@@ -171,8 +178,8 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles="Administrador,Supervisor")]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado")] BookEditViewModel bookView)
+        //[Authorize(Roles="Administrador,Supervisor")]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado,Categorias")] BookEditViewModel bookView)
         {
             if (id != bookView.Id)
             {
@@ -188,8 +195,7 @@ namespace Parcial.Controllers
                     Editorial=bookView.Editorial,
                     Año=bookView.Año,
                     Genero=bookView.Genero,
-                    EstaReservado=bookView.EstaReservado
-
+                    EstaReservado=bookView.EstaReservado,
                 };
                 _bookServices.Update(book);
                 return RedirectToAction(nameof(Index));

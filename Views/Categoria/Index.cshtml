@@ -1,0 +1,54 @@
+@model CategoriaViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<body class="indexcategoria">
+    <h1 class="display-4 rounded">Categorías</h1>
+
+    <p>
+        <a asp-action="CreateCategoria" class="btn btn-outline-dark">Crear nueva categoría</a>
+    </p>
+
+    <div class="row">
+        <form method="get" asp-action="Index" asp-controller="Categoria">
+            <div class="col-6 form-group">
+                <input class="form-control" asp-for="NameFilter"/>
+            </div>
+            <button class="btn btn-outline-dark" type="submit">Buscar</button>
+        </form>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Descripción
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var categoria in Model.Categorias)
+            {
+                <tr>
+                    <td>
+                        @categoria.Nombre
+                    </td>
+                    <td>
+                        @categoria.Descripcion
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@categoria.Id" class="btn btn-outline-secondary btn-sm">Editar</a>
+                        <a asp-action="Details" asp-route-id="@categoria.Id" class="btn btn-outline-info btn-sm">Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@categoria.Id" class="btn btn-outline-danger btn-sm">Eliminar</a>
+                        <a asp-action="LibrosEnCategoria" asp-route-categoriaId="@categoria.Id" class="btn btn-outline-dark">LibrosEnCategoria</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

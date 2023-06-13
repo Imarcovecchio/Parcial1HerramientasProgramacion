@@ -15,6 +15,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IAutorServices, AutorServices>();
 builder.Services.AddScoped<IbookServices,BookServices>();
+builder.Services.AddScoped<ICategoriaSerivces,CategoriaServices>();
 
 var app = builder.Build();
 

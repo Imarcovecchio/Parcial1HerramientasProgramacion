@@ -8,8 +8,15 @@ public interface IbookServices{
 
     List<Book> QuerySearch(string str);
 
+    List<Categoria> Query(BookCreateViewModel viewmodel);
     List<Book>GetAll();
     Book? GetById(int id);
 
     SelectList GetAutoresSelectList();
+    SelectList GetCategoriaSelectList();
+    
+    List<Categoria> GetCategorias();
+
+    
+    List<Categoria>? GetCategoriaSelectList(List<int> selectedCategoryIds);
 }

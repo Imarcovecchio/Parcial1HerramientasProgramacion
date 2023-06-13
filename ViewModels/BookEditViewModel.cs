@@ -8,4 +8,6 @@
     public GeneroType Genero { get; set; } 
 
     public bool EstaReservado {get; set;} = false;
+
+    public ICollection<Categoria> Categorias { get; set; }
     }

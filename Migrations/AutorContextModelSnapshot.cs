@@ -76,6 +76,40 @@ namespace Parcial.Migrations
                     b.ToTable("Book");
                 });
 
+            modelBuilder.Entity("BookCategoria", b =>
+                {
+                    b.Property<int>("CategoriasId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("LibrosId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("CategoriasId", "LibrosId");
+
+                    b.HasIndex("LibrosId");
+
+                    b.ToTable("BookCategorias", (string)null);
+                });
+
+            modelBuilder.Entity("Categoria", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categoria");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -281,6 +315,21 @@ namespace Parcial.Migrations
                         .IsRequired();
 
                     b.Navigation("Autor");
+                });
+
+            modelBuilder.Entity("BookCategoria", b =>
+                {
+                    b.HasOne("Categoria", null)
+                        .WithMany()
+                        .HasForeignKey("CategoriasId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Book", null)
+                        .WithMany()
+                        .HasForeignKey("LibrosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

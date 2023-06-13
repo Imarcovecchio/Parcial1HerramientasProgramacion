@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    var categoriaList = ViewData["Libros"];
 }
 <body class="indexbook">
 <h4 class="display-4 rounded">Crear Libro</h4>
@@ -48,6 +49,8 @@
                     <input class="form-check-input" asp-for="EstaReservado" /> @Html.DisplayNameFor(model => model.EstaReservado)
                 </label>
             </div>
+            <select multiple asp-for="CategoriaIds" id="Categorias" asp-items="ViewBag.Categorias"></select>
+
             <div class="form-group">
                 <input type="submit" value="Crear" class="btn btn-primary" />
             </div>

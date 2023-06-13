@@ -1,3 +1,5 @@
+
+
 public class Book{
     public int Id { get; set; }
     public int AutorId {get;set;}
@@ -9,4 +11,6 @@ public class Book{
     public bool EstaReservado {get; set;} = false;
 
     public virtual Autor Autor {get; set;}
+
+    public virtual List<Categoria> Categorias { get; set; }
 }

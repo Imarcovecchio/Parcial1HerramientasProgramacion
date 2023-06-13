@@ -7,4 +7,6 @@ public class BookCreateViewModel{
     public GeneroType Genero { get; set; } 
 
     public bool EstaReservado {get; set;} = false;
+
+    public List<int> CategoriaIds{get;set;}
 }
