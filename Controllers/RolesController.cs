@@ -34,7 +34,7 @@ namespace Parcial.Controllers;
     }
 
     [HttpPost]
-    [Authorize(Roles="Administrador")]
+    //[Authorize(Roles="Administrador")]
     public IActionResult Create(RoleCreateViewModel model)
     {
         if(string.IsNullOrEmpty(model.RoleName))
@@ -49,7 +49,7 @@ namespace Parcial.Controllers;
     }
 
     
-    [Authorize(Roles="Administrador,Supervisor")]
+    //[Authorize(Roles="Administrador,Supervisor")]
     public async Task<IActionResult> Edit(string id)
     {
         var rol = await _roleManager.FindByIdAsync(id);
@@ -65,7 +65,7 @@ namespace Parcial.Controllers;
     }
 
      [HttpPost]
-     [Authorize(Roles="Administrador,Supervisor")]
+    // [Authorize(Roles="Administrador,Supervisor")]
     public async Task<IActionResult> Edit(RoleEditViewModel model)
     {
         var rol = await _roleManager.FindByNameAsync(model.RoleName);
@@ -80,7 +80,7 @@ namespace Parcial.Controllers;
     }
 
     [HttpGet]
-    [Authorize(Roles="Administrador")]
+    //[Authorize(Roles="Administrador")]
     public async Task<IActionResult> Delete(string id)
     {
         var rol = await _roleManager.FindByIdAsync(id);
@@ -95,7 +95,7 @@ namespace Parcial.Controllers;
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    [Authorize(Roles="Administrador")]
+   // [Authorize(Roles="Administrador")]
     public async Task<IActionResult> Delete(RoleCreateViewModel model)
     {
         if (ModelState.IsValid)

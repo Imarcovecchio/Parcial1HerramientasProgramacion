@@ -127,5 +127,25 @@ namespace Parcial.Controllers
             }
             return View(categoria);
         }
+
+
+        public IActionResult LibrosEnCategoria(int categoriaId)
+        {
+            var categoria = _categoriaServices.GetCategoria(categoriaId);
+            if (categoria == null)
+            {
+                return NotFound();
+            }
+
+            var libros = _bookServices.GetByCategoriaId(categoriaId);
+
+            var viewModel = new LibrosEnCategoriaViewModel
+            {
+                Categoria = categoria,
+                Libros = libros
+            };
+
+            return View(viewModel);
+        }
 }
 }

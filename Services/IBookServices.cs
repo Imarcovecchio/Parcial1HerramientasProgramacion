@@ -16,6 +16,7 @@ public interface IbookServices{
     SelectList GetCategoriaSelectList();
     
     List<Categoria> GetCategorias();
+    List<Book> GetByCategoriaId(int categoriaId);
 
     
     List<Categoria>? GetCategoriaSelectList(List<int> selectedCategoryIds);

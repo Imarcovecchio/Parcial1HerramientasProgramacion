@@ -1,0 +1,55 @@
+@model LibrosEnCategoriaViewModel
+
+@{
+    ViewData["Title"] = "Libros en Categoría";
+}
+
+<h1 class="display-4 rounded">Libros en Categoría: @Model.Categoria.Nombre</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Autor
+            </th>
+            <th>
+                Editorial
+            </th>
+            <th>
+                Año
+            </th>
+            <th>
+                Género
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var libro in Model.Libros)
+        {
+            <tr>
+                <td>
+                    @libro.Nombre
+                </td>
+                <td>
+                    @if (libro.Autor != null)
+                        {
+                            @libro.Autor.Nombre
+                        }
+
+                </td>
+                <td>
+                    @libro.Editorial
+                </td>
+                <td>
+                    @libro.Año
+                </td>
+                <td>
+                    @libro.Genero
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

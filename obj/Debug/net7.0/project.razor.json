@@ -18725,6 +18725,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Categoria\\LibrosEnCategoria.cshtml",
+      "TargetPath": "Views\\Categoria\\LibrosEnCategoria.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"

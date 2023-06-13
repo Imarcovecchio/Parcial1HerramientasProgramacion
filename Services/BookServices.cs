@@ -121,5 +121,13 @@ public class BookServices : IbookServices
             }
             _context.SaveChanges();
         }
+
     }
+        public List<Book> GetByCategoriaId(int categoriaId)
+        {
+           return _context.Book
+                 .Include(b => b.Autor)
+                 .Where(b => b.Categorias.Any(c => c.Id == categoriaId))
+                 .ToList();
+        }
 }
