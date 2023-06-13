@@ -18690,6 +18690,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Categoria\\Edit.cshtml",
+      "TargetPath": "Views\\Categoria\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Roles\\Edit.cshtml",
       "TargetPath": "Views\\Roles\\Edit.cshtml",
       "FileKind": "mvc"
@@ -18757,6 +18762,11 @@
     {
       "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Autor\\Details.cshtml",
       "TargetPath": "Views\\Autor\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\Views\\Categoria\\Delete.cshtml",
+      "TargetPath": "Views\\Categoria\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {

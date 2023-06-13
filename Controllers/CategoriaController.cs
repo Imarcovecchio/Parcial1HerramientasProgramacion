@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Parcial.Data;
 
@@ -16,12 +17,10 @@ namespace Parcial.Controllers
 
         public async Task<IActionResult> Index(string nameFilter)
         {
-        //listar todos los roles
         var model = new CategoriaViewModel();
         
         model.Categorias = _categoriaServices.QuerySearch(nameFilter);
         return View(model);
-        
         }
         
 
@@ -53,9 +52,80 @@ namespace Parcial.Controllers
             return View(categoriaView);
         }
     
+        // GET: Autor/Delete/5
+        //[Authorize(Roles="Administrador,Supervisor")]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var categoria = _categoriaServices.GetCategoria(id.Value);
+            if (categoria == null)
+            {
+                return NotFound();
+            }
+
+            return View(categoria);
+        }
+
+        // POST: Autor/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+       // [Authorize(Roles="Administrador,Supervisor")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            
+            var categoria = _categoriaServices.GetCategoria(id);
+            if (categoria != null)
+            {
+                _categoriaServices.Delete(categoria);
+            }
+            return RedirectToAction(nameof(Index));
+        }
 
              
+        // GET: Autor/Edit/5
+        //[Authorize(Roles="Administrador,Supervisor")]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var categoria = _categoriaServices.GetCategoria(id.Value);
+            if (categoria == null)
+            {
+                return NotFound();
+            }
+            return View(categoria);
+        }
+
+        // POST: Autor/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        //[Authorize(Roles="Administrador,Supervisor")]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Descripcion,Libros")] CategoriaEditViewModel categoria)
+        {
+            if (id != categoria.Id)
+            {
+                return NotFound();
+            }
+            if (ModelState.IsValid)
+            {
+                var categoria1 = new Categoria{
+                    Id=categoria.Id,
+                    Nombre=categoria.Nombre,
+                    Descripcion= categoria.Descripcion,
+                };           
+                _categoriaServices.Update(categoria1);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(categoria);
+        }
 }
 }
