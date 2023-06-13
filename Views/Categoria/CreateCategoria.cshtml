@@ -2,7 +2,6 @@
 
 @{
     ViewData["Title"] = "Crear Categoría";
-    List<Book> bookList = (List<Book>)ViewData["Libros"];
 }
 
 <h1>Crear Categoría</h1>
@@ -18,9 +17,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Crear</button>
 </form>
-@foreach (var item in bookList)
-{
-   <div>@item.Nombre</div>
-}
+
 
 
