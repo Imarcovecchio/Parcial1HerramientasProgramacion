@@ -157,7 +157,7 @@ namespace Parcial.Controllers
         }
 
         // GET: Book/Edit/5
-        //[Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Edit(int? id)
         {
             ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
@@ -192,7 +192,7 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Edit([Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado,CategoriaIds")] BookEditViewModel bookView)
         {
             var categorias = _context.Categoria.Where(x=> bookView.CategoriaIds.Contains(x.Id)).ToList();

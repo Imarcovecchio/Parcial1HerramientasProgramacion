@@ -53,7 +53,7 @@ namespace Parcial.Controllers
         }
     
         // GET: Autor/Delete/5
-        //[Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace Parcial.Controllers
         // POST: Autor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-       // [Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             
@@ -87,7 +87,7 @@ namespace Parcial.Controllers
 
              
         // GET: Autor/Edit/5
-        //[Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -108,7 +108,7 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Supervisor")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Descripcion,Libros")] CategoriaEditViewModel categoria)
         {
             if (id != categoria.Id)
@@ -128,7 +128,7 @@ namespace Parcial.Controllers
             return View(categoria);
         }
 
-
+        [Authorize(Roles="Administrador,Supervisor,Lectura")]
         public IActionResult LibrosEnCategoria(int categoriaId)
         {
             var categoria = _categoriaServices.GetCategoria(categoriaId);

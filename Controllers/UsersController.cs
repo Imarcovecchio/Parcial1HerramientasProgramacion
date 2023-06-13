@@ -31,7 +31,7 @@ public class UsersController : Controller
         return View(users);
     }
 
-   // [Authorize(Roles="Administrador,Supervisor")]
+   [Authorize(Roles="Administrador,Supervisor")]
     public async Task<IActionResult> Edit(string id)
     {
         var user = await _userManager.FindByIdAsync(id);
@@ -44,7 +44,7 @@ public class UsersController : Controller
         return View(userViewModel);
     }
     
-    //[Authorize(Roles="Administrador,Supervisor")]
+    [Authorize(Roles="Administrador,Supervisor")]
     public IActionResult Privacy()
     {
         return View();
@@ -56,7 +56,7 @@ public class UsersController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
      [HttpPost]
-    // [Authorize(Roles="Administrador,Supervisor")]
+    [Authorize(Roles="Administrador,Supervisor")]
     public async Task<IActionResult> Edit(UserEditViewModel model)
     {
         var user = await _userManager.FindByNameAsync(model.UserName);
