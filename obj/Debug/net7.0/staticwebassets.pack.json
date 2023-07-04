@@ -5,8 +5,16 @@
       "PackagePath": "staticwebassets\\Parcial.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\32152-marrones.jpg",
+      "PackagePath": "staticwebassets\\Images\\32152-marrones.jpg"
+    },
+    {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\autor.jpg",
       "PackagePath": "staticwebassets\\Images\\autor.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\backgroundCategory.png",
+      "PackagePath": "staticwebassets\\Images\\backgroundCategory.png"
     },
     {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_delete_outline_black_24dp.png",
@@ -15,6 +23,10 @@
     {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_edit_black_24dp.png",
       "PackagePath": "staticwebassets\\Images\\baseline_edit_black_24dp.png"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_home_black_24dp.png",
+      "PackagePath": "staticwebassets\\Images\\baseline_home_black_24dp.png"
     },
     {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\biblioteca.jpg",

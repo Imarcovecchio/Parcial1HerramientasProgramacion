@@ -32,7 +32,11 @@ public class BookServices : IbookServices
             return selectList;
         }
 
-    
+    public List<Categoria> QueryCategorias(BookCreateViewModel viewModel){
+        var categoria = _context.Categoria.Where(x=> viewModel.CategoriaIds.Contains(x.Id)).ToList();
+
+        return categoria;
+    }
 
     public List<Categoria>? GetCategoriaSelectList(List<int> selectedCategoryIds){
 

@@ -135,6 +135,7 @@ namespace Parcial.Controllers
         {
             
            var categorias = _context.Categoria.Where(x=> bookView.CategoriaIds.Contains(x.Id)).ToList();
+           //var categorias = _bookServices.QueryCategorias(bookView);
             if (ModelState.IsValid)
             {
                 var book = new Book{

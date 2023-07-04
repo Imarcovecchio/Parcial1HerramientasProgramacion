@@ -44,8 +44,23 @@ html {
   background-repeat: no-repeat;
   opacity: 0.8;
 }
+
+.category{
+  background-image: url('../Images/backgroundCategory.png') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
 .indexautor{
   background-image: url('../Images/autor.jpg') !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+.roles{
+  background-image: url('../Images/32152-marrones.jpg') !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -73,4 +88,38 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.table-estilizada {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.table-estilizada th {
+  background-color: #f2f2f2;
+  color: #333;
+  font-weight: bold;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.table-estilizada td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-estilizada tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-estilizada tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.table-estilizada caption {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
 }

@@ -15,7 +15,7 @@ public interface IbookServices{
     SelectList GetAutoresSelectList();
     SelectList GetCategoriaSelectList();
     
-    List<Categoria> GetCategorias();
+    List<Categoria> QueryCategorias(BookCreateViewModel viewModel);
     List<Book> GetByCategoriaId(int categoriaId);
 
     

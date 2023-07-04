@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yDTGX/Qkij3INHFlvYnQSyiUibIsuU5P4lG3DX+NTNc=",
+  "Hash": "8yKOpXvTq9jAuGmmywZrdyyKl9j2qcMAHf+RqWHVhKM=",
   "Source": "Parcial",
   "BasePath": "_content/Parcial",
   "Mode": "Default",
@@ -1122,6 +1122,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\32152-marrones.jpg",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/32152-marrones.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\32152-marrones.jpg"
+    },
+    {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\autor.jpg",
       "SourceId": "Parcial",
       "SourceType": "Discovered",
@@ -1137,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\autor.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\backgroundCategory.png",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/backgroundCategory.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\backgroundCategory.png"
     },
     {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_delete_outline_black_24dp.png",
@@ -1171,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\baseline_edit_black_24dp.png"
+    },
+    {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_home_black_24dp.png",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/baseline_home_black_24dp.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\baseline_home_black_24dp.png"
     },
     {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\biblioteca.jpg",
