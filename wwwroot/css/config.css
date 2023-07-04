@@ -36,6 +36,25 @@
   color: #ffffff;
   text-shadow: 2px 2px 4px #000000;
 }
+
+.prueba h1 {
+  font-size: 4rem; /* Tamaño de fuente más grande para h1 */
+  text-shadow: 4px 4px 8px #000000;
+  padding: 10px;
+}
+
+.prueba h2 {
+  font-size: 1.8rem; /* Tamaño de fuente para h2 */
+  text-shadow: 4px 4px 8px #000000;
+  padding: 10px;
+}
+
+.prueba h3 {
+  font-size: 1.5rem; /* Tamaño de fuente para h3 */
+  text-shadow: 4px 4px 8px #000000;
+  padding: 10px;
+}
+
 .contenido {
   margin-top: 20px;
   display: flex;

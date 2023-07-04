@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\Images\\backgroundCategory.png"
     },
     {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_account_circle_black_24dp.png",
+      "PackagePath": "staticwebassets\\Images\\baseline_account_circle_black_24dp.png"
+    },
+    {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_delete_outline_black_24dp.png",
       "PackagePath": "staticwebassets\\Images\\baseline_delete_outline_black_24dp.png"
     },
@@ -27,6 +31,18 @@
     {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_home_black_24dp.png",
       "PackagePath": "staticwebassets\\Images\\baseline_home_black_24dp.png"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_how_to_reg_black_24dp.png",
+      "PackagePath": "staticwebassets\\Images\\baseline_how_to_reg_black_24dp.png"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_login_black_24dp.png",
+      "PackagePath": "staticwebassets\\Images\\baseline_login_black_24dp.png"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\baseline_logout_black_24dp.png",
+      "PackagePath": "staticwebassets\\Images\\baseline_logout_black_24dp.png"
     },
     {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\biblioteca.jpg",
