@@ -62,10 +62,15 @@ public class BookServices : IbookServices
         _context.SaveChanges();
         
     }
+    
 
     public List<Book> GetAll()
     {
         return _context.Book.Include(r => r.Nombre).ToList();
+    }
+
+    public List<Book> GetBooksAvailable(){
+        return _context.Book.Where(x=> !x.EstaReservado).ToList();
     }
 
     public Book? GetById(int id)

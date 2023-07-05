@@ -1,0 +1,18 @@
+@model List<BookCreateViewModel>
+
+<h2>Libros Disponibles</h2>
+
+@if (Model.Count > 0)
+{
+    <ul>
+        @foreach (var libro in Model)
+        {
+            <li>@libro.Nombre - @libro.Editorial</li>
+            <!-- Agrega aquí más detalles del libro si es necesario -->
+        }
+    </ul>
+}
+else
+{
+    <p>No hay libros disponibles en este momento.</p>
+}

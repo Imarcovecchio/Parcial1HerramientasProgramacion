@@ -10,11 +10,14 @@ public interface IbookServices{
 
     List<Categoria> Query(BookCreateViewModel viewmodel);
     List<Book>GetAll();
+
+    List<Book> GetBooksAvailable();
     Book? GetById(int id);
 
     SelectList GetAutoresSelectList();
     SelectList GetCategoriaSelectList();
     
+    List<Categoria> GetCategorias();
     List<Categoria> QueryCategorias(BookCreateViewModel viewModel);
     List<Book> GetByCategoriaId(int categoriaId);
 

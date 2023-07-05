@@ -1,0 +1,29 @@
+@model List<LibrosEnCategoriaViewModel>
+
+<h2>Ver Categorías</h2>
+
+@if (Model.Count > 0)
+{
+    @foreach (var categoria in Model)
+    {
+        <h3>@categoria.Categoria.Nombre</h3>
+
+        @if (categoria.Libros.Count > 0)
+        {
+            <ul>
+                @foreach (var libro in categoria.Libros)
+                {
+                    <li>@libro.Nombre</li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p>No hay libros en esta categoría.</p>
+        }
+    }
+}
+else
+{
+    <p>No hay categorías disponibles.</p>
+}
