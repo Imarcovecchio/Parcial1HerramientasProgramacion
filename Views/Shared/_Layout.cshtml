@@ -4,11 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Parcial</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/config.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Parcial.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Views/Shared/_Layout.cshtml.css" asp-append-version="true"/>
+    
 </head>
 <body>
     <header>
@@ -23,9 +26,14 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Book" asp-action="Index">Book</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Alumno" asp-action="Index">
+                                <img src="../Images/student-with-graduation-cap.png" alt="Index" />Alumno</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Profesor" asp-action="Index">
+                                <img src="../Images/teach.png" alt="Index" />Profesor</a>
+                        </li>
+                        <!--<li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Autor" asp-action="Index">Autor</a>
                         </li>
                         <li class="nav-item">
@@ -40,6 +48,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Categoria" asp-action="Index">Categoria</a>
                         </li>
+                        -->
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

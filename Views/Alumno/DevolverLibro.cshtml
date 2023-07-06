@@ -1,0 +1,22 @@
+@model BookViewModel
+
+<h2>Devolver Libro</h2>
+
+@if (Model.Books.Count > 0)
+{
+    <form method="post" action="@Url.Action("ConfirmarDevolucion")">
+        @foreach (var libro in Model.Books)
+        {
+            <div>
+                <input type="radio" id="@libro.Id" name="libroId" value="@libro.Id" required>
+                <label for="@libro.Id">@libro.Nombre</label>
+            </div>
+        }
+
+        <button type="submit">Devolver</button>
+    </form>
+}
+else
+{
+    <p>No hay libros disponibles para devolver.</p>
+}

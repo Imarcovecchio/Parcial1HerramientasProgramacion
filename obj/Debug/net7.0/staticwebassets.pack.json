@@ -53,6 +53,18 @@
       "PackagePath": "staticwebassets\\Images\\librr.jpg"
     },
     {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\student-with-graduation-cap.png",
+      "PackagePath": "staticwebassets\\Images\\student-with-graduation-cap.png"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\teach.png",
+      "PackagePath": "staticwebassets\\Images\\teach.png"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\alumno.css",
+      "PackagePath": "staticwebassets\\css\\alumno.css"
+    },
+    {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\config.css",
       "PackagePath": "staticwebassets\\css\\config.css"
     },

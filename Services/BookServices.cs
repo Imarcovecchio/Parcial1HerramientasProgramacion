@@ -62,6 +62,10 @@ public class BookServices : IbookServices
         _context.SaveChanges();
         
     }
+    public void Devolver(Book book){
+        book.EstaReservado =false;
+        _context.SaveChanges();
+    }
     
 
     public List<Book> GetAll()
@@ -71,6 +75,13 @@ public class BookServices : IbookServices
 
     public List<Book> GetBooksAvailable(){
         return _context.Book.Where(x=> !x.EstaReservado).ToList();
+    }
+    public List<Book> GetBooksUnAvailable(){
+        return _context.Book.Where(x=> x.EstaReservado).ToList();
+    }
+
+    public List<Book> GetBooksReserved(){
+        return _context.Book.Where(x=> x.EstaReservado).ToList();
     }
 
     public Book? GetById(int id)

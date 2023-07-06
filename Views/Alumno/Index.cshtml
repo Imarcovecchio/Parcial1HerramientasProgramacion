@@ -2,14 +2,27 @@
 <html>
 <head>
     <title>Índice de Alumno</title>
+    <link rel="stylesheet" href="~/css/alumno.css" asp-append-version="true" />
 </head>
 <body>
-    <h1>Alumno</h1>
-    <ul>
-        <li><a asp-action="VerLibrosDisponibles" >Ver Libros Disponibles</a></li>
-        <li><a asp-action="VerCategorias">Ver Categorías</a></li>
-        <li><a href="reservar_libro.html">Reservar Libro</a></li>
-        <li><a href="devolver_libro.html">Devolver Libro</a></li>
-    </ul
+    <div class="container">
+    <h1>Bienvenido @User.Identity.Name</h1>
+    <div class="row">
+        <div class="col-md-3">
+        <a asp-action="VerLibrosDisponibles" class="btn btn-primary">Ver Libros Disponibles</a>
+        </div>
+        <div class="col-md-3">
+        <a asp-action="VerCategorias" class="btn btn-primary">Ver Categorías</a>
+        </div>
+        <div class="col-md-3">
+        <a asp-action="ReservarLibro" class="btn btn-primary">Reservar Libro</a>
+        </div>
+        <div class="col-md-3">
+        <a asp-action="DevolverLibro" class="btn btn-primary">Devolver Libro</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>
+
+

@@ -59,5 +59,60 @@ namespace Parcial.Controllers
             return View(librosEnCategoriasViewModel);
         }
 
+        public ActionResult ReservarLibro()
+        {
+            var librosDisponibles = _bookServices.GetBooksAvailable();
+            var bookViewModel = new BookViewModel
+            {
+                Books = librosDisponibles
+            };
+            return View(bookViewModel);
+        }
+
+
+        [HttpPost]
+        public ActionResult ConfirmarReserva(int libroId)
+        {
+            var libro = _bookServices.GetById(libroId);
+
+            if (libro != null)
+            {
+                libro.EstaReservado = true;
+                _bookServices.Reservar(libro);
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("ReservarLibro");
+        }
+        
+        public ActionResult DevolverLibro()
+        {
+            var librosDisponibles = _bookServices.GetBooksUnAvailable();
+            var bookViewModel = new BookViewModel
+            {
+                Books = librosDisponibles
+            };
+            return View(bookViewModel);
+        }
+
+
+        [HttpPost]
+        public ActionResult ConfirmarDevolucion(int libroId)
+        {
+            var libro = _bookServices.GetById(libroId);
+
+            if (libro != null)
+            {
+                libro.EstaReservado = true;
+                _bookServices.Devolver(libro);
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("DevolverLibro");
+        }
+
+
+
+
     }
 }

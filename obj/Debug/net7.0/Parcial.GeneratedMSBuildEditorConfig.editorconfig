@@ -20,8 +20,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Alumno/DevolverLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXERldm9sdmVyTGlicm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Alumno/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Alumno/ReservarLibro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWx1bW5vXFJlc2VydmFyTGlicm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Alumno/VerCategorias.cshtml]
@@ -106,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Profesor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzb3JcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nacho/OneDrive/Documentos/ISTEA/Herramientas/Parcial/Views/Roles/Create.cshtml]

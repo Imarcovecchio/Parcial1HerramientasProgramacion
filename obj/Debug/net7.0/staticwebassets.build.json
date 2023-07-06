@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "SkGE/4CXSyVXAlrKaOd1kQj6CuUlPHEuUm8SlFOdNjY=",
+  "Hash": "fuHdTGC+sso3VnekskRbEAwaCkkYvJbHPn+H1szSNCA=",
   "Source": "Parcial",
   "BasePath": "_content/Parcial",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\Parcial.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\alumno.css",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "css/alumno.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\alumno.css"
+    },
+    {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\css\\config.css",
       "SourceId": "Parcial",
       "SourceType": "Discovered",
@@ -1324,6 +1341,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\librr.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\student-with-graduation-cap.png",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/student-with-graduation-cap.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\student-with-graduation-cap.png"
+    },
+    {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\teach.png",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/teach.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\teach.png"
     },
     {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\js\\site.js",

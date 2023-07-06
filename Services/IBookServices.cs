@@ -5,6 +5,7 @@ public interface IbookServices{
     void Update(Book book);
     void Delete(Book book);
     void Reservar(Book book);
+    void Devolver(Book book);
 
     List<Book> QuerySearch(string str);
 
@@ -12,6 +13,7 @@ public interface IbookServices{
     List<Book>GetAll();
 
     List<Book> GetBooksAvailable();
+    List<Book> GetBooksUnAvailable();
     Book? GetById(int id);
 
     SelectList GetAutoresSelectList();
@@ -20,6 +22,8 @@ public interface IbookServices{
     List<Categoria> GetCategorias();
     List<Categoria> QueryCategorias(BookCreateViewModel viewModel);
     List<Book> GetByCategoriaId(int categoriaId);
+
+    List<Book> GetBooksReserved();
 
     
     List<Categoria>? GetCategoriaSelectList(List<int> selectedCategoryIds);
