@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4eqCWnMNVmyNADzlKT9h++7ixIa7TdRBQZ7nmtR1D+Y=",
+  "Hash": "O1Tya1tBHgCJkBNY0o+27vlf0j7CqR2vyYKZhB8wMb0=",
   "Source": "Parcial",
   "BasePath": "_content/Parcial",
   "Mode": "Default",
@@ -1326,6 +1326,23 @@
       "OriginalItemSpec": "wwwroot\\Images\\32152-marrones.jpg"
     },
     {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\6191107.jpg",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/6191107.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\6191107.jpg"
+    },
+    {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\account-group.png",
       "SourceId": "Parcial",
       "SourceType": "Discovered",
@@ -1341,6 +1358,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\account-group.png"
+    },
+    {
+      "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\account-multiple-outline.png",
+      "SourceId": "Parcial",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\",
+      "BasePath": "_content/Parcial",
+      "RelativePath": "Images/account-multiple-outline.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\account-multiple-outline.png"
     },
     {
       "Identity": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\account-tie.png",

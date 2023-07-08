@@ -1,0 +1,31 @@
+@model List<UsuariosConRolesViewModel>
+
+<body class="profesorFondo">
+    <div class="container">
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Rol</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Usuario.UserName</td>
+                <td>@item.Rol</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    </div>
+    <div class="container">
+        <br/>
+        <div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Profesor")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a profesor
+        </a>
+        </div>
+    </div>
+</body>

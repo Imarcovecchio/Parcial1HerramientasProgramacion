@@ -13,12 +13,20 @@
       "PackagePath": "staticwebassets\\Images\\32152-marrones.jpg"
     },
     {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\6191107.jpg",
+      "PackagePath": "staticwebassets\\Images\\6191107.jpg"
+    },
+    {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\Black_and_gold_marble_texture.jpg",
       "PackagePath": "staticwebassets\\Images\\Black_and_gold_marble_texture.jpg"
     },
     {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\account-group.png",
       "PackagePath": "staticwebassets\\Images\\account-group.png"
+    },
+    {
+      "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\account-multiple-outline.png",
+      "PackagePath": "staticwebassets\\Images\\account-multiple-outline.png"
     },
     {
       "Id": "C:\\Users\\nacho\\OneDrive\\Documentos\\ISTEA\\Herramientas\\Parcial\\wwwroot\\Images\\account-tie.png",

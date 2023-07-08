@@ -51,7 +51,7 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.8;
-}
+  }
 .indexautor{
   background-image: url('../Images/autor.jpg') !important;
   background-size: cover;
@@ -59,6 +59,11 @@ html {
   background-repeat: no-repeat;
   opacity: 0.8;
 }
+
+.opacity-layer {
+  opacity: 0.8;
+}
+
 .roles{
   background-image: url('../Images/32152-marrones.jpg') !important;
   background-size: cover;
