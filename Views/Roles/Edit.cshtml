@@ -1,31 +1,36 @@
 @using Microsoft.AspNetCore.Identity;
 @model RoleEditViewModel;
-
-<h4>Editar Rol</h4>
+@{
+    ViewData["Title"] = "Edit";
+}
+<body class="profesorFondo">
+<h4 class="text-center text-white">Hola, @User.Identity.Name, aquí podrás editar el rol que se requiera.</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 mx-auto ">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="RoleName" class="control-label"></label>
-                <select asp-for="RoleName" asp-items="Model.RoleNames" class="form-control"></select>
+                <label asp-for="RoleName" class="control-label"  style="color: white; font-weight: bold;">Roles disponibles</label>
+                <select asp-for="RoleName" asp-items="Model.RoleNames" class="form-select"></select>
                 <span asp-validation-for="RoleName" class="text-danger"></span>
             </div>
-
             <div class="form-group">
-                <label asp-for="NewRoleName" class="control-label"></label>
+                <label asp-for="NewRoleName" class="control-label" style="color: white; font-weight: bold;">Ingrese el nombre del nuevo rol</label>
                 <input asp-for="NewRoleName" class="form-control" />
                 <span asp-validation-for="NewRoleName" class="text-danger"></span>
             </div>
-
+            <br>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Roles")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a roles
+        </a>
 </div>
+</body>

@@ -3,14 +3,39 @@
 <head>
     <title>Índice de Profesor</title>
 </head>
-<body>
-    <h1 class="animate__animated animate__bounce display-4">Hola, Prof. @User.Identity.Name</h1>
-    <ul>
-        <li><a asp-action="AdministrarAutores" >Administrar Autores</a></li>
-        <li><a asp-action="AdministrarLibros">Administrar Libros</a></li>
-        <li><a asp-action="AdministrarCategorias">Administrar Categorias</a></li>
-        <li><a asp-action="AdministrarRoles">Administrar Roles</a></li>
-        <li><a asp-action="AdministrarUsuarios">Administrar Usuarios</a></li>
-    </ul>
+<body class="profesorFondo">
+       <div class="conta">
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/account-tie.png" class="icon-img" />
+             </i>
+            <a asp-action="AdministrarAutores" class="btn btn-outline-light boton mx-2">Administrar Autores</a>
+        </div>
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/book-education-outline.png" class="icon-img" />
+             </i>
+            <a asp-action="AdministrarLibros" class="btn btn-outline-light boton mx-2">Administrar Libros</a>
+        </div>
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/bookshelf.png" class="icon-img" />
+             </i>
+            <a asp-action="AdministrarCategorias" class="btn btn-outline-light boton mx-2">Administrar Categorias</a>
+        </div>
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/human-edit.png" class="icon-img" />
+             </i>
+            <a asp-action="AdministrarRoles" class="btn btn-outline-light boton mx-2">Administrar Roles</a>
+        </div>
+
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/account-group.png" class="icon-img" />
+             </i>
+            <a asp-action="AdministrarUsuarios" class="btn btn-outline-light boton mx-2">Administrar Usuarios</a>
+        </div>
+    </div>
 </body>
 </html>

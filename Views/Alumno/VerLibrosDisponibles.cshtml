@@ -1,18 +1,42 @@
 @model List<BookCreateViewModel>
 
-<h2>Libros Disponibles</h2>
-
+<h2 style="color: white; text-align: center;">Libros Disponibles</h2>
+<br>
+<body class="alumnoFondo">
 @if (Model.Count > 0)
 {
-    <ul>
-        @foreach (var libro in Model)
-        {
-            <li>@libro.Nombre - @libro.Editorial</li>
-            <!-- Agrega aquí más detalles del libro si es necesario -->
-        }
-    </ul>
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Editorial</th>
+                <th scope="col">Genero</th>
+                <th scope="col">Año</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var libro in Model)
+            {
+                <tr>
+                    <td>@libro.Nombre</td>
+                    <td>@libro.Editorial</td>
+                    <td>@libro.Genero</td>
+                    <td>@libro.Año</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
     <p>No hay libros disponibles en este momento.</p>
 }
+<a href="@Url.Action("ReservarLibro", "Alumno")" class="btn btn-success"> ¿Quieres reservar un libro?</a>
+<br>
+<br>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Alumno")" class="btn btn-light">
+            <img src="../Images/arrow-left-circle.png" class="pruebatamaño" />Volver a Alumno
+        </a>
+</div>
+</body>

@@ -1,29 +1,53 @@
 @model List<LibrosEnCategoriaViewModel>
 
-<h2>Ver Categorías</h2>
+<h2 style="color: white; text-align: center;">Categorías</h2>
+<body class="alumnoFondo">
+<div class="container-scroll">
 
 @if (Model.Count > 0)
 {
-    @foreach (var categoria in Model)
-    {
-        <h3>@categoria.Categoria.Nombre</h3>
-
-        @if (categoria.Libros.Count > 0)
-        {
-            <ul>
-                @foreach (var libro in categoria.Libros)
-                {
-                    <li>@libro.Nombre</li>
-                }
-            </ul>
-        }
-        else
-        {
-            <p>No hay libros en esta categoría.</p>
-        }
-    }
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Categoría</th>
+                <th>Libros</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var categoria in Model)
+            {
+                <tr>
+                    <td>@categoria.Categoria.Nombre</td>
+                    <td>
+                        @if (categoria.Libros.Count > 0)
+                        {
+                            <ul>
+                                @foreach (var libro in categoria.Libros)
+                                {
+                                    <li>@libro.Nombre</li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No hay libros en esta categoría.</p>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }
 else
 {
     <p>No hay categorías disponibles.</p>
 }
+
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Alumno")" class="btn btn-light">
+            <img src="../Images/arrow-left-circle.png" class="pruebatamaño" />Volver a Alumno
+        </a>
+        </div>
+
+</div>
+</body>

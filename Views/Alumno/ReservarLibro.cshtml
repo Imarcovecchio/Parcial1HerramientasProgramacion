@@ -1,22 +1,38 @@
 @model BookViewModel
 
-<h2>Reservar Libro</h2>
-
+<h2 style="color: white; text-align: center;">Reservar Libro</h2>
+<br>
+<body class="alumnoFondo">
 @if (Model.Books.Count > 0)
 {
     <form method="post" action="@Url.Action("ConfirmarReserva")">
-        @foreach (var libro in Model.Books)
-        {
-            <div>
-                <input type="radio" id="@libro.Id" name="libroId" value="@libro.Id" required>
-                <label for="@libro.Id">@libro.Nombre</label>
-            </div>
-        }
-
-        <button type="submit">Reservar</button>
+        <div class="table">
+            <table class="table table-dark table-striped">
+                <tbody>
+                    @foreach (var libro in Model.Books)
+                    {
+                        <tr>
+                            <td>
+                                <input class="form-check-input me-1" type="radio" name="libroId" value="@libro.Id" id="@libro.Id" checked>
+                                <label class="form-check-label" for="@libro.Id">@libro.Nombre</label>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <button type="submit" class="btn btn-success">Reservar</button>
     </form>
 }
 else
 {
     <p>No hay libros disponibles para reservar.</p>
 }
+<br>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Alumno")" class="btn btn-light">
+            <img src="../Images/arrow-left-circle.png" class="pruebatamaño" />Volver a Alumno
+        </a>
+        </div>
+</body>
+

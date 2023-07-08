@@ -1,41 +1,38 @@
 @using Microsoft.AspNetCore.Identity;
 @model UserEditViewModel
-
-<h4>Editar Usuario</h4>
+@{
+    ViewData["Title"] = "Edit";
+}
+<body class="profesorFondo">
+<h4 class="text-center text-white">Hola, @User.Identity.Name, aquí podrás asignarle un rol a un usuario.</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 mx-auto">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
+                <label asp-for="UserName" class="control-label"  style="color: white; font-weight: bold;">Usuarios disponibles</label>
+                <select asp-for="UserName" asp-items="Model.UserNames" class="form-select"></select>
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
-             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
             <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <select asp-for="Role" asp-items="Model.Roles">
+                <label asp-for="Role" class="control-label" style="color: white; font-weight: bold;"> Roles</label>
+                <select asp-for="Role" asp-items="Model.Roles" class="form-select">
                     <option>Ninguno</option>
                 </select>
                 <span asp-validation-for="Role" class="text-danger"></span>
             </div>
-
+            <br>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Users")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a usuarios
+        </a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+</body>

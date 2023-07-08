@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Índice de Alumno</title>
-    <link rel="stylesheet" href="~/css/alumno.css" asp-append-version="true" />
-</head>
-<body>
-    <div class="container">
-    <h1>Bienvenido @User.Identity.Name</h1>
-    <div class="row">
-        <div class="col-md-3">
-        <a asp-action="VerLibrosDisponibles" class="btn btn-primary">Ver Libros Disponibles</a>
+<body class="alumnoFondo">
+
+<!-- <h1 class="color">Hola, @User.Identity.Name</h1>  -->
+        <div class="conta">
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/book-education-outline.png" class="icon-img" />
+             </i>
+            <a asp-action="VerLibrosDisponibles" class="btn btn-outline-light boton mx-2">Ver Libros Disponibles</a>
         </div>
-        <div class="col-md-3">
-        <a asp-action="VerCategorias" class="btn btn-primary">Ver Categorías</a>
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/bookshelf.png" class="icon-img" />
+             </i>
+            <a asp-action="VerCategorias" class="btn btn-outline-light boton mx-2">Ver Categorías</a>
         </div>
-        <div class="col-md-3">
-        <a asp-action="ReservarLibro" class="btn btn-primary">Reservar Libro</a>
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/book-check-outline.png" class="icon-img" />
+             </i>
+            <a asp-action="ReservarLibro" class="btn btn-outline-light boton mx-2">Reservar Libro</a>
         </div>
-        <div class="col-md-3">
-        <a asp-action="DevolverLibro" class="btn btn-primary">Devolver Libro</a>
+        <div class="box">
+            <i class="icon">
+                <img src="../Images/book-cancel-outline.png" class="icon-img" />
+             </i>
+            <a asp-action="DevolverLibro" class="btn btn-outline-light boton mx-2">Devolver Libro</a>
         </div>
     </div>
-</div>
 </body>
 </html>
-
-

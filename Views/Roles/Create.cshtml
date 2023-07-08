@@ -3,31 +3,31 @@
 @{
     ViewData["Title"] = "Create";
 }
+<body class="profesorFondo">
+<h1 class="text-center text-white">Hola, @User.Identity.Name ¿Quieres ingresar un nuevo rol?</h1>
 
-<h1>Create</h1>
-
-<hr />
+<hr/>
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+    <div class="col-md-4 mx-auto">
+        <form asp-action="Create" class="text-white">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="RoleName" class="control-label"></label>
+                <label class="control-label"> </label>
                 <input asp-for="RoleName" class="form-control" />
                 <span asp-validation-for="RoleName" class="text-danger"></span>
             </div>
-
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <br>
+            <div class="form-group text-center">
+                <input type="submit" value="Crear nuevo Rol" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Roles")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a roles
+        </a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+</body>

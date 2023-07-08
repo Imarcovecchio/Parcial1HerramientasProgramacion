@@ -4,6 +4,13 @@
     top: 20%;
     left: 20%;
 }
+
+.img-normalizada{
+	width: 20px;
+	height: 20px;
+	object-fit: cover;
+}
+
 /**.prueba{
         display: flex;
         justify-content: center;
@@ -73,6 +80,10 @@
     
   }
 */
+.navbar-custom {
+  background-color: #c7bbbb; /* Cambia este valor al color gris deseado */
+  color: #c7bbbb; /* Cambia este valor para ajustar el color del texto en el encabezado */
+}
   .botones {
     display: flex;
     justify-content: center;

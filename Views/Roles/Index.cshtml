@@ -1,38 +1,41 @@
 @using Microsoft.AspNetCore.Identity
 @model List<IdentityRole> 
 
-<body class="roles">
-    <h3>Roles</h3>
+<body class="profesorFondo">
+    <div class="container">
+        <h3 class="text-center text-white">Roles</h3>
 
-    <table class="table-light">
-        <thead >
-            <tr>
-                <th>Rol</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+        <table class="table table-dark table-striped">
+            <thead>
                 <tr>
-                    <td>
-                        <span class="mr-3" style="font-size: 18px; font-family: 'Arial', sans-serif; color: #333;">@Html.DisplayFor(modelItem => item.Name)</span>
-                    </td>
-                    <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm btn-icon">
-                                    <img src="../Images/baseline_edit_black_24dp.png" alt="Editar" />
-                                </a>
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm btn-icon">
-                                    <img src="../Images/baseline_delete_outline_black_24dp.png" alt="Eliminar" />
-                            </a>
-                    </td>                        
+                    <th>Rol</th>
+                    <th class="text-center">Acciones</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-    <br>
-    </br>
-    <ul>
-    <a asp-action="Create" class="btn  btn-primary">Crear nuevo Rol</a>
-    </ul>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <ul>
+            <a asp-action="Create" class="btn btn-light">Crear nuevo Rol</a>
+        </ul>
+        <br/>
+        <div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Profesor")" class="btn btn-light btn-sm">
+            <img src="../Images/arrow-left-circle.png" class="pruebatamaño" />Volver a profesor
+        </a>
+        </div>
+    </div>
 </body>

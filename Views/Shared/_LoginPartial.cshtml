@@ -7,12 +7,12 @@
 {
     <li class="nav-item">
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
-        <img src="../Images/baseline_account_circle_black_24dp.png" /> Hello @User.Identity?.Name!</a>
+        <img src="~/Images/baseline_account_circle_black_24dp.png" /> Hello @User.Identity?.Name!</a>
     </li>
     <li class="nav-item">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button  type="submit" class="nav-link btn btn-link text-dark">
-                <img src="../Images/baseline_logout_black_24dp.png" alt="Logout" />
+                <img src="~/Images/logout-variant.png" alt="Logout"  width="30" />
             </button>
         </form>
     </li>
@@ -21,11 +21,11 @@ else
 {
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">
-        <img src="../Images/baseline_how_to_reg_black_24dp.png" />Register</a>
+        <img src="~/Images/baseline_how_to_reg_black_24dp.png" />Register</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">
-        <img src="../Images/baseline_login_black_24dp.png" alt="Login" />Login</a>
+        <img src="~/Images/baseline_login_black_24dp.png" alt="Login" />Login</a>
     </li>
 }
 </ul>

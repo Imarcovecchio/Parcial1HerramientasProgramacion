@@ -1,14 +1,33 @@
 @using Microsoft.AspNetCore.Identity
 @model List<IdentityUser> 
 
-<h3>Users</h3>
+<body class="profesorFondo">
+<h3 class="text-center text-white">Usuarios</h3>
 
-<ul>
-@foreach (var item in Model)
-{
-    <li>
-        @item.UserName | <a asp-action="Edit" asp-route-id="@item.Id">Asignar Rol</a>   
-    </li>
-    
-}
-</ul>
+<table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.UserName) 
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Asignar Rol </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+<br>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Profesor")" class="btn btn-light">
+            <img src="../Images/arrow-left-circle.png" class="pruebatamaño" />Volver a profesor
+        </a>
+        </div>
+</body>
