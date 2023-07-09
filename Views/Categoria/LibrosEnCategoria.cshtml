@@ -3,10 +3,10 @@
 @{
     ViewData["Title"] = "Libros en Categoría";
 }
-<body class="category">
-<h1 class="display-4 rounded">Libros en Categoría: @Model.Categoria.Nombre</h1>
+<body class="profesorFondo">
+<h1 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Libros en Categoría: @Model.Categoria.Nombre</h1>
 
-<table class="table">
+<table class="table table-dark table-striped">
     <thead>
         <tr>
             <th>
@@ -53,4 +53,9 @@
         }
     </tbody>
 </table>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Categoria")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a Categoria
+        </a>
+    </div>
 </body>

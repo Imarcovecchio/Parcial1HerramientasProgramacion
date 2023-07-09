@@ -4,11 +4,11 @@
     ViewData["Title"] = "Details";
 }
 
-<body class="indexautor">
+<body class="profesorFondo">
 <div>
-    <h4 class="display-4 rounded">Detalles Autor</h4>
+    <h4 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Detalles Autor</h4>
     <hr />
-    <dl class="row">
+    <dl class="row" style="color: white; text-align: center font-weight: bold;">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
@@ -35,8 +35,13 @@
         </dd>
     </dl>
 </div>
+<br>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn  btn-primary">Editar</a> 
-    <a asp-action="Index" class="btn  btn-primary">Regresar</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn  btn-info">Editar</a> 
 </div>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Autor")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a autor
+        </a>
+        </div>
 </body>

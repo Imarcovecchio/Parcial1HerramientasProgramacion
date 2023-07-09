@@ -75,3 +75,6 @@
     background-color: #585857;
     color: rgb(224, 188, 68);
 }
+.btn.ml-2 {
+  margin-left: 10px; /* Ajusta el valor según sea necesario */
+}

@@ -68,7 +68,7 @@ namespace Parcial.Controllers;
     public async Task<IActionResult> Edit(RoleEditViewModel model)
     {
         var rol = await _roleManager.FindByNameAsync(model.RoleName);
-       
+
         if (rol != null)
         {
             rol.Name=model.NewRoleName;

@@ -4,11 +4,11 @@
     ViewData["Title"] = "Delete";
 }
 
-<body class="indexbook">
+<body class="profesorFondo">
 <div>
-    <h4 class="display-4 rounded">Eliminar Libro</h4>
-    <hr />
-    <dl class="row">
+    <h4 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Eliminar Libro</h4>
+    <hr/>
+    <dl class="row" style="color: white; text-align: center font-weight: bold;">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
@@ -50,7 +50,12 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> 
-        <a asp-action="Index" class="btn  btn-primary">Regresar</a>
     </form>
+</div>
+<br>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Book")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a libro
+        </a>
 </div>
 </body>

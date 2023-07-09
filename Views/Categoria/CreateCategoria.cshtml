@@ -3,20 +3,27 @@
 @{
     ViewData["Title"] = "Crear Categoría";
 }
-<body class="category">
-<h1>Crear Categoría</h1>
+<body class="profesorFondo">
+<h1 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Crear Categoría</h1>
+
 
 <form asp-action="CreateCategoria" method="post">
     <div class="form-group">
-        <label for="nombre">Nombre:</label>
+        <label for="nombre" class="control-label" style="color: white; text-align: center font-weight: bold;">Nombre:</label>
         <input class="form-control" type="text" id="nombre" name="Nombre" required>
     </div>
     <div class="form-group">
-        <label for="descripcion">Descripción:</label>
+        <label for="descripcion" style="color: white; text-align: center font-weight: bold;">Descripción:</label>
         <textarea class="form-control" id="descripcion" name="Descripcion" required></textarea>
     </div>
+    <br>
     <button type="submit" class="btn btn-primary">Crear</button>
 </form>
-
+<br>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Categoria")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a Categoria
+        </a>
+    </div>
 </body>
 

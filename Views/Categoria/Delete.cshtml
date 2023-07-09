@@ -3,29 +3,40 @@
 @{
     ViewData["Title"] = "Delete";
 }
-<body class="category">
-<div>
-    <h4 class="display-4 rounded">Eliminar Categoria</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-    </dl>
-    
+<body class="profesorFondo">
+<h4 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Eliminar Categoria</h4>
+<hr/>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                 @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Descripcion)
+                </td>
+                
+            </tr>
+    </tbody>
+    </table>
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> 
-        <a asp-action="Index" class="btn  btn-primary">Regresar</a>
     </form>
-</div>
+    
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Categoria")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a Categoria
+        </a>
+    </div>
 </body>

@@ -1,7 +1,7 @@
 @model Book
 
 <!-- Resto del contenido de la vista -->
-
+<body class="profesorFondo">
 <h3>Quitar Reservar</h3>
 <div>
     @if (Model.EstaReservado)
@@ -14,8 +14,12 @@
     else
     {
         <p>Este libro no está reservado.</p>
-        <div>
-        <a asp-action="Index">Regresar</a>
+        <br>
+        <div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Book")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a libro
+        </a>
         </div>
     }
 </div>
+</body>

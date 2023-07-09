@@ -3,11 +3,11 @@
 @{
     ViewData["Title"] = "Delete";
 }
-<body class="indexautor">
+<body class="profesorFondo">
 <div>
-    <h4 class="display-4 rounded">Eliminar Autor</h4>
+    <h4 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Eliminar Autor</h4>
     <hr />
-    <dl class="row">
+    <dl class="row" style="color: white; text-align: center font-weight: bold;">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Nombre)
         </dt>
@@ -33,11 +33,15 @@
             @Html.DisplayFor(model => model.Genero)
         </dd>
     </dl>
-    
+    <br>
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Eliminar" class="btn btn-danger" /> 
-        <a asp-action="Index" class="btn  btn-primary">Regresar</a>
     </form>
 </div>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Autor")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a autor
+        </a>
+        </div>
 </body>

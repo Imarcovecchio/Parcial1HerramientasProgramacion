@@ -6,16 +6,18 @@
 <body class="profesorFondo">
 <h1 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Libros ISTEA</h1>
 
-<p>
-  <a asp-action="Create" class="btn btn-light">Crear nuevo libro</a>
-</p>
 <div class="row">
 <form method="get" asp-action="Index" asp-controller="Book">
-    <div class="col-6 form-group">
-        <input class="form-control" asp-for="NameFilter"/>
+    <div class="row">
+        <div class="col-6 form-group">
+            <div class="input-group">
+                <input class="form-control" asp-for="NameFilter"/>
+                <div class="input-group-append">
+                    <button class="btn btn-light ml-2" type="submit">Buscar</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <br>
-    <button class="btn btn-light" type="submit">Buscar</button>
 </form>
 </div>
 <br>
@@ -69,8 +71,10 @@
                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-success btn-sm">Editar</a>
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info btn-sm">Detalles</a>
                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm">Eliminar</a>
-                <a asp-action="Reservar" asp-route-id="@item.Id" class="btn btn-outline-warning btn-sm">Reservar</a>
-                <a asp-action="QuitarReserva" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm">Quitar Reserva</a>
+                @if (User.IsInRole("Administrador")){
+                    <a asp-action="Reservar" asp-route-id="@item.Id" class="btn btn-outline-warning btn-sm">Reservar</a>
+                    <a asp-action="QuitarReserva" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm">Quitar Reserva</a>
+                }
             </td>
             
         </tr>
@@ -78,6 +82,10 @@
     </tbody>
     
 </table>
+<br>
+<p>
+  <a asp-action="Create" class="btn btn-success">Crear nuevo libro</a>
+</p>
 <br>
 <div class="tirar-derecha">
         <a href="@Url.Action("Index", "Profesor")" class="btn btn-light btn-sm">

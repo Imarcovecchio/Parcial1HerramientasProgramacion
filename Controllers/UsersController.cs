@@ -62,6 +62,10 @@ public class UsersController : Controller
     public async Task<IActionResult> Edit(UserEditViewModel model)
     {
         var user = await _userManager.FindByNameAsync(model.UserName);
+
+        if(model.Role == "Ninguno"){
+            ModelState.AddModelError("Role", "Ingrese un rol válido");
+        }
         if (user != null)
         {
             await _userManager.AddToRoleAsync(user, model.Role);

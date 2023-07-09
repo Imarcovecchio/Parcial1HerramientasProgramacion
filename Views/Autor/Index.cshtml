@@ -6,17 +6,19 @@
 <body class="profesorFondo">
 <h1 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Autor ISTEA</h1>
 <br>
-<p>
-    <a asp-action="Create" class="btn btn-light">Crear nuevo autor</a>
-</p>
-<br>
+
 <div class="row">
 <form method="get" asp-action="Index" asp-controller="Autor">
-    <div class="col-6 form-group">
-        <input class="form-control" asp-for="NameFilter"/>
+    <div class="row">
+        <div class="col-6 form-group">
+            <div class="input-group">
+                <input class="form-control" asp-for="NameFilter"/>
+                <div class="input-group-append">
+                    <button class="btn btn-light ml-2" type="submit">Buscar</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <br>
-    <button class="btn btn-light" type="submit">Buscar</button>
 </form>
 </div>
 <br>
@@ -62,6 +64,10 @@
 }
     </tbody>
 </table>
+<br>
+<p>
+    <a asp-action="Create" class="btn btn-success">Crear nuevo autor</a>
+</p>
 <br>
 <div class="tirar-derecha">
         <a href="@Url.Action("Index", "Profesor")" class="btn btn-light btn-sm">

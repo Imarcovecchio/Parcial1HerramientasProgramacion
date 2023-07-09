@@ -3,8 +3,8 @@
 @{
     ViewData["Title"] = "Edit";
 }
-<body class="indexautor">
-<h4 class="display-4 rounded">Editar Autor</h4>
+<body class="profesorFondo">
+<h4 class="container display-4 rounded" style="color: white; text-align: center font-weight: bold;">Editar Autor</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -12,37 +12,40 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
+                <label asp-for="Nombre" class="control-label" style="color: white; text-align: center font-weight: bold;"></label>
                 <input asp-for="Nombre" class="form-control" />
                 <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Apellido" class="control-label"></label>
+                <label asp-for="Apellido" class="control-label" style="color: white; text-align: center font-weight: bold;"></label>
                 <input asp-for="Apellido" class="form-control" />
                 <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Edad" class="control-label"></label>
+                <label asp-for="Edad" class="control-label" style="color: white; text-align: center font-weight: bold;"></label>
                 <input asp-for="Edad" class="form-control" />
                 <span asp-validation-for="Edad" class="text-danger"></span>
             </div>
             <div class="form-group">
-            <label asp-for="Genero">Género:</label>
+            <label asp-for="Genero" style="color: white; text-align: center font-weight: bold;">Género:</label>
             <select class="form-control" name="genero" id="genero">
             <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>
             </select>
             </div>
+            <br>
             <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-success" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Regresar</a>
-</div>
+<div class="tirar-derecha">
+        <a href="@Url.Action("Index", "Autor")" class="btn btn-light btn-sm">
+            <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a autor
+        </a>
+        </div>
 </body>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
