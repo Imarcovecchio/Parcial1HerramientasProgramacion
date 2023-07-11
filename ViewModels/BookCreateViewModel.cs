@@ -9,4 +9,5 @@ public class BookCreateViewModel{
     public bool EstaReservado {get; set;} = false;
 
     public List<int> CategoriaIds{get;set;}
+
 }

@@ -27,13 +27,41 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Alumno" asp-action="Index">
-                                <img src="~/Images/student-with-graduation-cap.png"  alt="Index" />Alumno</a>
+                        <li class="nav-item dropdown ms-2">
+                            <div class="btn-group dropdown">
+                                <a class="btn btn-light" href="@Url.Action("Index", "Alumno")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">
+                                    <img src="~/Images/student-with-graduation-cap.png" alt="Index" /> Alumno
+                                </a>
+                                <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="alumnoDropdown">
+                                    <li><a class="dropdown-item" href="@Url.Action("VerLibrosDisponibles", "Alumno")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Ver Libros Disponibles</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("ReservarLibro", "Alumno")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Reservar Libro</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("DevolverLibro", "Alumno")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Devolver Libro</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("VerCategorias", "Alumno")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Ver Categorias</a></li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Profesor" asp-action="Index">
-                                <img src="~/Images/teach.png" alt="Index" />Profesor</a>
+                        <li class="nav-item dropdown">
+                            <div class="btn-group dropdown ms-2">
+                                <a class="btn btn-light" href="@Url.Action("Index", "Profesor")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">
+                                    <img src="~/Images/teach.png" alt="Index" /> Profesor
+                                </a>
+                                <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="alumnoDropdown">
+                                    <li><a class="dropdown-item" href="@Url.Action("AdministrarAutores", "Profesor")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Administrar Autores</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("AdministrarCategorias", "Profesor")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Administrar Categorias</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("AdministrarLibros", "Profesor")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Administrar Libros</a></li>
+                                    @if (User.IsInRole("Administrador")){
+                                    <li><a class="dropdown-item" href="@Url.Action("AdministrarUsuarios", "Profesor")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Administrar Usuarios</a></li>
+                                    <li><a class="dropdown-item" href="@Url.Action("AdministrarRoles", "Profesor")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Administrar Roles</a></li>
+                                    }
+                                    <li><a class="dropdown-item" href="@Url.Action("UsuariosConRoles", "Profesor")" style="color: rgb(0, 0, 0); text-align: center font-weight: bold;">Ver roles de Usuarios</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

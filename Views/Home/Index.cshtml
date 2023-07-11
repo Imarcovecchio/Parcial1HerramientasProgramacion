@@ -1,17 +1,25 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Biblioteca ISTEA - Página principal";
 }
 <body class="indexhome">
     <div class="prueba">
-        <h1 class="animate__animated animate__bounce display-4" >Biblioteca ISTEA</h1>
+        <h1 class="animate__animated animate__slideInDown animate__bounce display-4">Biblioteca ISTEA</h1>
 
         <div class="contenido">
-            <h3>Bienvenido,@User.Identity.Name</h3>
+            <h3 id="bienvenida" class="animate__animated">Bienvenido, @User.Identity.Name</h3>
             <h4>¿Eres alumno o profesor?</h4>
         </div>
         <div class="botones">
-            <a href="Alumno" class="btn btn-outline-light boton mx-2">Alumno</a>
-            <a href="Profesor" class="btn btn-outline-light boton mx-2">Profesor</a>
+            <a href="@Url.Action("Index", "Alumno")" class="btn btn-outline-light boton mx-2 animate__animated animate__fadeInLeft">Alumno</a>
+            <a href="@Url.Action("Index", "Profesor")" class="btn btn-outline-light boton mx-2 animate__animated animate__fadeInRight">Profesor</a>
         </div>
     </div>
+
+</html>
 </body>
+<script>
+  setTimeout(function() {
+    var bienvenida = document.getElementById('bienvenida');
+    bienvenida.classList.add('animate__fadeOut');
+  }, 5000); // 5000 ms = 5 segundos
+</script>

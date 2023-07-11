@@ -32,10 +32,14 @@ public class BookServices : IbookServices
             return selectList;
         }
 
-    public List<Categoria> QueryCategorias(BookCreateViewModel viewModel){
-        var categoria = _context.Categoria.Where(x=> viewModel.CategoriaIds.Contains(x.Id)).ToList();
+    public List<Categoria> QueryCategorias(BookCreateViewModel bookView){
+        var existingCategoriaIds = _context.Categoria.Select(x => x.Id).ToList();
+        var validCategoriaIds = bookView.CategoriaIds.Intersect(existingCategoriaIds).ToList();
+        
+        var categorias = _context.Categoria.Where(x => validCategoriaIds.Contains(x.Id)).ToList();
+        
 
-        return categoria;
+        return categorias;
     }
 
     public List<Categoria>? GetCategoriaSelectList(List<int> selectedCategoryIds){
@@ -94,16 +98,28 @@ public class BookServices : IbookServices
     public List<Book> QuerySearch(string str)
     {
         var query = from book in _context.Book select book; 
-            if (!string.IsNullOrEmpty(str))
+        if (!string.IsNullOrEmpty(str))
+        {
+            if (Enum.TryParse(str, true, out GeneroType generoType))
             {
-                query = query.Where(x=> x.Nombre.ToLower().Contains(str.ToLower()) || x.Editorial.ToLower().Contains(str.ToLower()) || x.Año.ToString() == str);
+                query = query.Where(x => x.Genero == generoType);
             }
+            else if (int.TryParse(str,out int year))
+            {
+                query = query.Where(x => x.Año == year);
+            }
+            else
+            {
+                query = query.Where(x => x.Nombre.ToLower().Contains(str.ToLower()) || 
+                                        x.Editorial.ToLower().Contains(str.ToLower()) || 
+                                        x.Año.ToString() == str);
+            }
+        }
 
-            var queryReady =  query.Include(b =>b.Autor).ToList();
+        var queryReady = query.Include(b => b.Autor).ToList();
         
         return queryReady;
     }
-
     public List<Categoria> Query(BookCreateViewModel viewmodel){
         var query = _context.Categoria.Where(x=> viewmodel.CategoriaIds.Contains(x.Id)).ToList();
         return query;

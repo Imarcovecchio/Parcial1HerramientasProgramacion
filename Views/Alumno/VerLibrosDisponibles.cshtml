@@ -3,6 +3,20 @@
 <h2 style="color: white; text-align: center;">Libros Disponibles</h2>
 <br>
 <body class="alumnoFondo">
+<br>
+     <form method="get" asp-action="VerLibrosDisponibles" asp-controller="Alumno">
+        <div class="row">
+            <div class="col-6 form-group">
+                <div class="input-group">
+                    <input class="form-control" name="searchTerm" placeholder="Buscar libro..." />
+                    <div class="input-group-append">
+                        <button class="btn btn-light ml-2" type="submit">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br>
 @if (Model.Count > 0)
 {
     <table class="table table-dark table-striped">

@@ -28,11 +28,13 @@ namespace Parcial.Controllers
     }
 
         // GET: Autor
+        [Authorize(Roles="Administrador,Profesor")]
          public ActionResult Index()
         {
             return View();
         }
 
+         [Authorize(Roles="Administrador,Profesor")]
         public async Task<ActionResult> UsuariosConRoles()
          {
             var usuarios = await _userManager.Users.ToListAsync();
@@ -55,24 +57,31 @@ namespace Parcial.Controllers
 
          }
 
-
+       [Authorize(Roles="Administrador,Profesor")]
         public ActionResult AdministrarAutores(){
            
            return RedirectToAction("Index", "Autor");
         }
-        
+
+        [Authorize(Roles="Administrador,Profesor")]
         public ActionResult AdministrarCategorias(){
            
            return RedirectToAction("Index", "Categoria");
         }
+
+        [Authorize(Roles="Administrador,Profesor")]
         public ActionResult AdministrarLibros(){
            
            return RedirectToAction("Index", "Book");
         }
+
+        [Authorize(Roles="Administrador,Profesor")]
         public ActionResult AdministrarUsuarios(){
            
            return RedirectToAction("Index", "Users");
         }
+
+        [Authorize(Roles="Administrador,Profesor")]
         public ActionResult AdministrarRoles(){
            
            return RedirectToAction("Index", "Roles");

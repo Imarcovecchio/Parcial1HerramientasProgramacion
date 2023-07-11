@@ -48,7 +48,7 @@ namespace Parcial.Controllers;
     }
 
     
-    [Authorize(Roles="Administrador,Supervisor")]
+    [Authorize(Roles="Administrador")]
     public async Task<IActionResult> Edit(string id)
     {
         var rol = await _roleManager.FindByIdAsync(id);
@@ -64,7 +64,7 @@ namespace Parcial.Controllers;
     }
 
      [HttpPost]
-     [Authorize(Roles="Administrador,Supervisor")]
+     [Authorize(Roles="Administrador")]
     public async Task<IActionResult> Edit(RoleEditViewModel model)
     {
         var rol = await _roleManager.FindByNameAsync(model.RoleName);

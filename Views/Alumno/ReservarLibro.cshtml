@@ -1,6 +1,7 @@
 @model BookViewModel
 
 <h2 style="color: white; text-align: center;">Reservar Libro</h2>
+<h4 style="color: white; text-align: center;"> Puedes seleccionar más de un libro</h3>
 <br>
 <body class="alumnoFondo">
 @if (Model.Books.Count > 0)
@@ -13,7 +14,7 @@
                     {
                         <tr>
                             <td>
-                                <input class="form-check-input me-1" type="radio" name="libroId" value="@libro.Id" id="@libro.Id" checked>
+                                <input class="form-check-input me-1" type="checkbox" name="libroIds" value="@libro.Id" id="@libro.Id">
                                 <label class="form-check-label" for="@libro.Id">@libro.Nombre</label>
                             </td>
                         </tr>
@@ -33,6 +34,5 @@ else
         <a href="@Url.Action("Index", "Alumno")" class="btn btn-light">
             <img src="../Images/arrow-left-circle.png" class="pruebatamaño" />Volver a Alumno
         </a>
-        </div>
+</div>
 </body>
-

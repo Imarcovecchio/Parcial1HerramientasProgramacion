@@ -2,7 +2,7 @@
 
 <!-- Resto del contenido de la vista -->
 <body class="profesorFondo">
-<h3>Quitar Reservar</h3>
+<h3 style="color: white; text-align: center font-weight: bold;">Hola Prof, @User.Identity.Name aqui podra quitar la reserva de un libro.</h3>
 <div>
     @if (Model.EstaReservado)
     {
@@ -13,13 +13,13 @@
     }
     else
     {
-        <p>Este libro no está reservado.</p>
+        <p style="color: white; text-align: center font-weight: bold;">Este libro no está reservado.</p>
         <br>
-        <div class="tirar-derecha">
+    }
+</div>
+<div class="tirar-derecha">
         <a href="@Url.Action("Index", "Book")" class="btn btn-light btn-sm">
             <img src="~/Images/arrow-left-circle.png" class="pruebatamaño" />Volver a libro
         </a>
         </div>
-    }
-</div>
 </body>

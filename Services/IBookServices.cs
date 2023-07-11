@@ -20,7 +20,7 @@ public interface IbookServices{
     SelectList GetCategoriaSelectList();
     
     List<Categoria> GetCategorias();
-    List<Categoria> QueryCategorias(BookCreateViewModel viewModel);
+    List<Categoria> QueryCategorias(BookCreateViewModel bookView);
     List<Book> GetByCategoriaId(int categoriaId);
 
     List<Book> GetBooksReserved();

@@ -49,7 +49,9 @@
                     <input class="form-check-input" asp-for="EstaReservado" /> @Html.DisplayNameFor(model => model.EstaReservado)
                 </label>
             </div>
-            <select multiple asp-for="CategoriaIds" id="Categorias" asp-items="ViewBag.Categorias"></select>
+            <div>
+                 <select multiple asp-for="CategoriaIds" id="Categorias" asp-items="ViewBag.Categorias" class="form-select" aria-label="Categorias" style="width: 100%;"></select>
+            </div>
             <br>
             <br>
             <div class="form-group">

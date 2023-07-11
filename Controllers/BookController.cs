@@ -30,7 +30,7 @@ namespace Parcial.Controllers
               return View(model);
             
         }
-
+        [Authorize(Roles="Administrador")]
         public IActionResult Reservar(int id){
             var book = _bookServices.GetById(id);
 
@@ -43,6 +43,7 @@ namespace Parcial.Controllers
         }
 
         [HttpPost, ActionName("Reservar")]
+        [Authorize(Roles="Administrador")]
         public async Task<IActionResult> ReservarConfirmed(int id)
         {
         var book = _bookServices.GetById(id);
@@ -62,6 +63,8 @@ namespace Parcial.Controllers
 
         return RedirectToAction("Index");  // Redireccionar a la vista principal después de reservar el libro
         }
+
+        [Authorize(Roles="Administrador")]
         public IActionResult QuitarReserva(int id){
             var book = _bookServices.GetById(id);
 
@@ -74,6 +77,7 @@ namespace Parcial.Controllers
         }
 
         [HttpPost, ActionName("QuitarReserva")]
+        [Authorize(Roles="Administrador")]
         public async Task<IActionResult> QuitarReservaConfirmed(int id)
         {
         var book = _bookServices.GetById(id);
@@ -131,13 +135,15 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles="Administrador,Profesor")]
         public async Task<IActionResult> Create([Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado,CategoriaIds")] BookCreateViewModel bookView)
         {
             
-           var categorias = _context.Categoria.Where(x=> bookView.CategoriaIds.Contains(x.Id)).ToList();
            //var categorias = _bookServices.QueryCategorias(bookView);
             if (ModelState.IsValid)
             {
+                var categorias = _context.Categoria.Where(x=> bookView.CategoriaIds.Contains(x.Id)).ToList();
+
                 var book = new Book{
                     Id = bookView.Id,
                     AutorId=bookView.AutorId,
@@ -153,12 +159,15 @@ namespace Parcial.Controllers
                 _bookServices.Create(book);
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
+            ViewData["Categorias"] = _bookServices.GetCategoriaSelectList();
             
             return View(bookView);
         }
 
         // GET: Book/Edit/5
-        [Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Profesor")]
         public async Task<IActionResult> Edit(int? id)
         {
             ViewData["AutorId"] = _bookServices.GetAutoresSelectList();
@@ -193,7 +202,7 @@ namespace Parcial.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Profesor")]
         public async Task<IActionResult> Edit([Bind("Id,AutorId,Nombre,Editorial,Año,Genero,EstaReservado,CategoriaIds")] BookEditViewModel bookView)
         {
             var categorias = _context.Categoria.Where(x=> bookView.CategoriaIds.Contains(x.Id)).ToList();
@@ -216,7 +225,7 @@ namespace Parcial.Controllers
             
             return View(bookView);
         }
-        [Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Profesor")]
         // GET: Book/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -238,7 +247,7 @@ namespace Parcial.Controllers
         // POST: Book/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles="Administrador,Supervisor")]
+        [Authorize(Roles="Administrador,Profesor")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             

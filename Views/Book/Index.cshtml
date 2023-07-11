@@ -64,7 +64,10 @@
                 @Html.DisplayFor(modelItem => item.EstaReservado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Autor.Nombre)
+                @if (item.Autor != null)
+                {
+                    @item.Autor.Nombre @(" ") @item.Autor.Apellido
+                }
             </td>
 
             <td>

@@ -1,6 +1,7 @@
 @model BookViewModel
 
 <h2 style="color: white; text-align: center;">Devolver Libro</h2>
+<h4 style="color: white; text-align: center;"> Puedes devolver más de un libro</h3>
 <br>
 <body class="alumnoFondo">
 @if (Model.Books.Count > 0)
@@ -9,14 +10,15 @@
         <div class="table">
             <table class="table table-dark table-striped">
                 <tbody>
-                        @foreach (var libro in Model.Books)
-                        { <tr>
+                    @foreach (var libro in Model.Books)
+                    {
+                        <tr>
                             <td>
-                                <input type="radio" id="@libro.Id" name="libroId" value="@libro.Id" required>
+                                <input type="checkbox" id="@libro.Id" name="libroIds" value="@libro.Id">
                                 <label for="@libro.Id">@libro.Nombre</label>
                             </td>
                         </tr>
-                        }
+                    }
                 </tbody>
             </table>
         </div>
@@ -32,5 +34,5 @@ else
         <a href="@Url.Action("Index", "Alumno")" class="btn btn-light">
             <img src="../Images/arrow-left-circle.png" class="pruebatamaño" />Volver a Alumno
         </a>
-        </div>
+</div>
 </body>
